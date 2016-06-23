@@ -29,23 +29,8 @@ I'm a car guy. Always have been. It's an industry in which I'd like to work. But
 <br>
 <a href= "http://www.elephantracing.com/index.htm"><img src= "http://www.elephantracing.com/images/logo_061813.png" /></a>
 
-<h3>Links</h3>
-<ul>
-	<li><a href= "http://noto-alex-j.omahacodeschool.com/index.html">Home</a></li>
-	<br>
-	<li><a href = "http://noto-alex-j.omahacodeschool.com/goals.html">Goals</a></li>
-	<br>
-	<li><strong>Mechanical Obsession</strong></li>
-	<br>
-	<li>Articles</li>
-		<ul>
-			<li><a href = "http://noto-alex-j.omahacodeschool.com/article1.html">Microsoft gaining an Edge in the browser market?</a></li>
-		</ul>
-	<br>
-	<li>Social Media</li>
-		<ul>
-			<li><a href = "https://www.facebook.com/alex.noto">Facebook</a></li>
-			<li><a href = "https://github.com/noto-alex-j">Github</a></li>
+<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
+
 
 </body>
 

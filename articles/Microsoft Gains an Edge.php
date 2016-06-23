@@ -23,23 +23,8 @@ The new Edge browser update will include several improvements, including more ef
 But is it too late? Has Microsoft already lost the browser race? There are several good browsers out there that have been performing better than Microsoft’s offerings and have been doing so for a very long time. In fact, Microsoft seems to have a habit of releasing poorly performing software and then scrambling to improve it when consumers report negative experiences and begin moving to other options. This was my experience, and the experience of others, with Windows 10 as a whole. It seemed like it was released perhaps a year too early, and it lacked support for much my laptop’s hardware. I’ve since moved to another option. But one of the most interesting and exciting aspects of the world of software is that it is always evolving. Perhaps Microsoft will debut a browser that will finally steal some of Chrome’s and Firefox’s thunder. There are more and more complaints of those browsers becoming bloated and clunky as well. The beauty of the free market is that competition encourages them all to continue improving. 
 </p>
 
-<h3>Links</h3>
-<ul>
-	<li><a href= "http://noto-alex-j.omahacodeschool.com/index.html">Home</a></li>
-	<br>
-	<li><a href = "http://noto-alex-j.omahacodeschool.com/goals.html">Goals</a></li>
-	<br>
-	<li><a href= "http://noto-alex-j.omahacodeschool.com/mech.html">Mechanical Mind</a></li>
-	<br>
-	<li>Articles</li>
-		<ul>
-			<li><strong>Microsoft gaining an Edge in the browser market?</strong></li>
-		</ul>
-	<br>
-	<li>Social Media</li>
-		<ul>
-			<li><a href = "https://www.facebook.com/alex.noto">Facebook</a></li>
-			<li><a href = "https://github.com/noto-alex-j">Github</a></li>
+<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
+
 
 </body>
 

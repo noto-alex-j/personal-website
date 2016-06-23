@@ -35,23 +35,9 @@
 	<li>Enjoy my job!</li>
 </ul>
 
-<h3>Links</h3>
-<ul>
-	<li><a href= "http://noto-alex-j.omahacodeschool.com/index.html">Home</a></li>
-	<br>
-	<li><strong>Goals</strong></li>
-	<br>
-	<li><a href= "http://noto-alex-j.omahacodeschool.com/mech.html">Mechanical Mind</a></li>
-	<br>
-	<li>Articles</li>
-		<ul>
-			<li><a href = "http://noto-alex-j.omahacodeschool.com/article1.html">Microsoft gaining an Edge in the browser market?</a></li>
-		</ul>
-	<br>
-	<li>Social Media</li>
-		<ul>
-			<li><a href = "https://www.facebook.com/alex.noto">Facebook</a></li>
-			<li><a href = "https://github.com/noto-alex-j">Github</a></li>
+
+<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
+
 
 </body>
 

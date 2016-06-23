@@ -26,5 +26,8 @@ Because everything on the web is created by individuals, it is a collaborative e
 The only limitations to accessing and creating web content are access to equipment and skill. Access to computers and to the Internet is already widespread as is constantly growing. And education in computer usage and in coding are becoming cheaper and, in a lot of cases, free. But as with any creative medium, practice and skill are important. Poorly designed and produced websites already proliferate on the web. Will that trend continue to grow along with access to education and equipment? It seems that web development has a large learning curve. It is difficult enough to learn how to use the individual components. But how do they function together to make an integrated whole? How much effort would it take an individual to learn enough to make a polished web page?  More and more platforms are trying to make it easier for the novice user to create web content, so what will the role of the web developer look like as tools for web creation become more user-friendly and less hands-on? Fortunately the web, as a medium for creation and expression, enables any individual to pick up the tools and produce something. As a medium which is consumed, the demands of the web’s user base will continue to shape its content and encourage continual improvement and progress. And skilled and practiced web developers will be the ones shaping that progress.
 </p>
 
+<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
+
+
 </body>
 </html>

@@ -17,9 +17,7 @@
 I'm Alex. I'm a student at Omaha Code School. I like making things. I want to make the web.
 </p>
 
-<h3>Links</h3>
-
-<?php include("/Users/Alex/Code/personal-website/navigation.php"); ?>
+<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
 
 </body>
 </html>
