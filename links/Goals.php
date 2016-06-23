@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <?php $title = "goals"; ?>
+<?php $dirfix = "../"; ?>
+<?php $prefix = "links"; ?>
 
 <html>
 
@@ -36,7 +38,7 @@
 </ul>
 
 
-<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
+<?php include("../navigation/navigation.php"); ?>
 
 
 </body>

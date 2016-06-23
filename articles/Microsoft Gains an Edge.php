@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <?php $title = "article1"; ?>
+<?php $dirfix = "../"; ?>
+<?php $prefix = "articles"; ?>
 
 <html>
 
@@ -23,7 +25,7 @@ The new Edge browser update will include several improvements, including more ef
 But is it too late? Has Microsoft already lost the browser race? There are several good browsers out there that have been performing better than Microsoft’s offerings and have been doing so for a very long time. In fact, Microsoft seems to have a habit of releasing poorly performing software and then scrambling to improve it when consumers report negative experiences and begin moving to other options. This was my experience, and the experience of others, with Windows 10 as a whole. It seemed like it was released perhaps a year too early, and it lacked support for much my laptop’s hardware. I’ve since moved to another option. But one of the most interesting and exciting aspects of the world of software is that it is always evolving. Perhaps Microsoft will debut a browser that will finally steal some of Chrome’s and Firefox’s thunder. There are more and more complaints of those browsers becoming bloated and clunky as well. The beauty of the free market is that competition encourages them all to continue improving. 
 </p>
 
-<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
+<?php include("../navigation/navigation.php"); ?>
 
 
 </body>

@@ -1,19 +1,21 @@
+
 <?php 
-$linkslinks = "/Users/Alex/Code/personal-website/links"; 
+$linkslinks = ($dirfix . "links"); 
 $linkslist = scandir($linkslinks);
 
-$articlelinks = "/Users/Alex/Code/personal-website/articles";
+$articlelinks = ($dirfix . "articles");
 $articlelist = scandir($articlelinks);
 sort($articlelist);
 ?>
 
+
 <h3>Links</h3>
 
 <ul>
-	<li><a href= "/personal-website/home.php">Home</a></li>
+	<li><a href= "Home.php">Home</a></li>
 	<br>
 <?php for ($file = 3; $file < count($linkslist); $file++) { ?>
-	<li><a href= "/personal-website/links/<?php echo $linkslist[$file]; ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a></li>
+	<li><a href= "<?php echo rtrim($linkslist[$file], "links/"); ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a></li>
 	<br>
 <?php } ?>
 </ul>
@@ -22,10 +24,11 @@ sort($articlelist);
 
 <ul>
 <?php for ($file = 3; $file < count($articlelist); $file++) { ?>
-		<li><a href= "/personal-website/articles/<?php echo $articlelist[$file]; ?>"><?php echo rtrim($articlelist[$file], ".php"); ?></a></li>
+		<li><a href= "<?php echo rtrim($articlelist[$file], "articles/"); ?>"><?php echo rtrim($articlelist[$file], ".php"); ?></a></li>
 		<br>
 <?php } ?>
 </ul>
+
 
 <h3>Social Media</h3>
 

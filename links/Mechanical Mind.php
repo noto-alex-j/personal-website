@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <?php $title = "mech"; ?>
+<?php $dirfix = "../"; ?>
+<?php $prefix = "links"; ?>
 
 <html>
 
@@ -29,7 +31,7 @@ I'm a car guy. Always have been. It's an industry in which I'd like to work. But
 <br>
 <a href= "http://www.elephantracing.com/index.htm"><img src= "http://www.elephantracing.com/images/logo_061813.png" /></a>
 
-<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
+<?php include("../navigation/navigation.php"); ?>
 
 
 </body>

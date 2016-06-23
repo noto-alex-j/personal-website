@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <?php $title = "home" ?>
+<?php $dirfix = ""; ?>
+<?php $prefix = ""; ?>
 
 <html>
 
@@ -17,7 +19,9 @@
 I'm Alex. I'm a student at Omaha Code School. I like making things. I want to make the web.
 </p>
 
-<?php include("/Users/Alex/Code/personal-website/navigation/navigation.php"); ?>
+<?php include("navigation/navigation.php"); ?>
+
+<?php echo getcwd() ?>
 
 </body>
 </html>
