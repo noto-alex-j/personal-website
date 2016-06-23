@@ -2,7 +2,7 @@
 
 <?php $title = "article2"; ?>
 <?php $dirfix = "../"; ?>
-<?php $prefix = "articles"; ?>
+<?php $prefix = "../articles/"; ?>
 
 <html>
 

@@ -2,7 +2,7 @@
 
 <?php $title = "mech"; ?>
 <?php $dirfix = "../"; ?>
-<?php $prefix = "links"; ?>
+<?php $prefix = "../links/"; ?>
 
 <html>
 

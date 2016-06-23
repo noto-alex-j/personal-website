@@ -2,7 +2,7 @@
 
 <?php $title = "goals"; ?>
 <?php $dirfix = "../"; ?>
-<?php $prefix = "links"; ?>
+<?php $prefix = "../links/"; ?>
 
 <html>
 

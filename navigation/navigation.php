@@ -15,7 +15,7 @@ sort($articlelist);
 	<li><a href= "Home.php">Home</a></li>
 	<br>
 <?php for ($file = 3; $file < count($linkslist); $file++) { ?>
-	<li><a href= "<?php echo rtrim($linkslist[$file], "links/"); ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a></li>
+	<li><a href= "/<?php echo ltrim($linkslist[$file], "//links/"); ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a></li>
 	<br>
 <?php } ?>
 </ul>
@@ -24,7 +24,7 @@ sort($articlelist);
 
 <ul>
 <?php for ($file = 3; $file < count($articlelist); $file++) { ?>
-		<li><a href= "<?php echo rtrim($articlelist[$file], "articles/"); ?>"><?php echo rtrim($articlelist[$file], ".php"); ?></a></li>
+		<li><a href= "/<?php echo ltrim($articlelist[$file], "//articles/"); ?>"><?php echo rtrim($articlelist[$file], ".php"); ?></a></li>
 		<br>
 <?php } ?>
 </ul>
