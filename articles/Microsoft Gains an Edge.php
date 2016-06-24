@@ -2,7 +2,7 @@
 
 <?php $title = "article1"; ?>
 <?php $dirfix = "../"; ?>
-<?php $prefix = "../articles/"; ?>
+<?php $prefix = "articles"; ?>
 
 <html>
 
@@ -11,7 +11,7 @@
 <head>
 
 <body>
-<h1 style = "text-align: center">Alex Noto</h1>
+<a href= "/Home.php"><h1>Alex Noto</h1></a>
 <hr>
 
 <h3>Microsoft gaining an Edge in the browser market?</h3>

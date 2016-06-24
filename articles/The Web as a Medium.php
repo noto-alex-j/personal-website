@@ -2,7 +2,7 @@
 
 <?php $title = "article2"; ?>
 <?php $dirfix = "../"; ?>
-<?php $prefix = "../articles/"; ?>
+<?php $prefix = "articles"; ?>
 
 <html>
 
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1 style = "text-align: center">Alex Noto</h1>
+<a href= "/Home.php"><h1>Alex Noto</h1></a>
 <hr>
 
 <h3>The web as a creative medium</h3>

@@ -1,0 +1,17 @@
+ul {
+	font-family: cursive;
+}
+
+#nameheader {
+	text-decoration: none;
+	color: black;
+}
+
+#nameheader:hover {
+	color: grey;
+}
+
+#linkcontainer {
+	display: flex;
+	flex-direction: column;
+}

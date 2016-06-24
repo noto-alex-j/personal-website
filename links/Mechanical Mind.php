@@ -2,7 +2,7 @@
 
 <?php $title = "mech"; ?>
 <?php $dirfix = "../"; ?>
-<?php $prefix = "../links/"; ?>
+<?php $prefix = "links"; ?>
 
 <html>
 
@@ -12,7 +12,7 @@
 
 <body>
 
-<h1 style = "text-align: center">Alex Noto</h1>
+<a href= "/Home.php"><h1>Alex Noto</h1></a>
 <hr>
 
 <h3>Mechanical Mind</h3>

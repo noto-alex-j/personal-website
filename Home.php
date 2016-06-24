@@ -6,12 +6,14 @@
 
 <html>
 
+<link type= "text/css"; rel= "stylesheet"; href= "/personal-website/stylesheet.css">
+
 <head>
 <title>Alex Noto Home</title>
 </head>
 
 <body>
-<h1 style = "text-align: center">Alex Noto</h1>
+<a href= "/Home.php" id="nameheader"><h1>Alex Noto</h1></a>
 <hr>
 
 <h3>About Me</h3>
@@ -21,7 +23,6 @@ I'm Alex. I'm a student at Omaha Code School. I like making things. I want to ma
 
 <?php include("navigation/navigation.php"); ?>
 
-<?php echo getcwd() ?>
 
 </body>
 </html>
