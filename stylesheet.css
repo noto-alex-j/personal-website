@@ -8,13 +8,13 @@
 	cursor: pointer;
 }
 
-#linkcontainer {
+#overalllinkcontainer {
 	display: flex;
 	justify-content:space-around;
 	flex: none;
 }
 
-.headercontainer {
+.headerandlistcontainer {
 	display:flex;
 	flex-flow: column wrap;
 	align-items: center;

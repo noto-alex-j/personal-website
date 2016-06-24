@@ -11,12 +11,12 @@ sort($articlelist);
 ?>
 
 <!-- Links Container -->
-<div id= "linkcontainer">
+<div id= "overalllinkcontainer">
 
 <!-- ----------------------------------------------------------------------------------------------- -->
 <!-- -----Links List Subcontainer----- -->
-<div class= "headercontainer">
-<h3>Links</h3>
+<div class= "headerandlistcontainer">
+<h3 class= "listcontainerbutton">Links</h3>
 
 <div class= "listcontainer">
 	
@@ -30,8 +30,8 @@ sort($articlelist);
 </div>
 
 <!-- -----Articles List Subcontainer----- -->
-<div class= "headercontainer">
-<h3>Articles</h3>
+<div class= "headerandlistcontainer">
+<h3 class= "listcontainerbutton">Articles</h3>
 
 <div class= "listcontainer">
 <?php for ($file = 3; $file < count($articlelist); $file++) { ?>
@@ -42,8 +42,8 @@ sort($articlelist);
 </div>
 
 <!-- -----Social Media List Subcontainer----- -->
-<div class= "headercontainer">
-<h3>Social Media</h3>
+<div class= "headerandlistcontainer">
+<h3 class= "listcontainerbutton">Social Media</h3>
 
 <div class= "listcontainer">
 	<a href="https://www.facebook.com/alex.noto">Facebook</a>
