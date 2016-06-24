@@ -10,43 +10,48 @@ $articlelist = scandir($articlelinks);
 sort($articlelist);
 ?>
 
+<!-- Links Container -->
 <div id= "linkcontainer">
 
+<!-- ----------------------------------------------------------------------------------------------- -->
+<!-- -----Links List Subcontainer----- -->
 <div class= "headercontainer">
 <h3>Links</h3>
 
-<ul class= "listcontainer">
+<div class= "listcontainer">
 	
-	<li><a href= "<?php if ($prefix == ""){echo "Home.php";} else {echo "../Home.php";} ?>">Home</a></li>
+	<a href= "<?php if ($prefix == ""){echo "Home.php";} else {echo "../Home.php";} ?>">Home</a>
 	<br>
 <?php for ($file = 3; $file < count($linkslist); $file++) { ?>
-	<li><a href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a></li>
+	<a href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a>
 	<br>
 <?php } ?>
-</ul>
+</div>
 </div>
 
+<!-- -----Articles List Subcontainer----- -->
 <div class= "headercontainer">
 <h3>Articles</h3>
 
-<ul class= "listcontainer">
+<div class= "listcontainer">
 <?php for ($file = 3; $file < count($articlelist); $file++) { ?>
-		<li><a href= "<?php if ($prefix == ""){echo "articles/";} else {echo "../articles/";}?><?php echo ltrim($articlelist[$file], "//articles/"); ?>"><?php echo rtrim($articlelist[$file], ".php"); ?></a></li>
+		<a href= "<?php if ($prefix == ""){echo "articles/";} else {echo "../articles/";}?><?php echo ltrim($articlelist[$file], "//articles/"); ?>"><?php echo rtrim($articlelist[$file], ".php"); ?></a>
 		<br>
 <?php } ?>
-</ul>
+</div>
 </div>
 
+<!-- -----Social Media List Subcontainer----- -->
 <div class= "headercontainer">
 <h3>Social Media</h3>
 
-<ul class= "listcontainer">
-	<li><a href="https://www.facebook.com/alex.noto">Facebook</a></li>
+<div class= "listcontainer">
+	<a href="https://www.facebook.com/alex.noto">Facebook</a>
 	<br>
-	<li><a href="https://github.com/noto-alex-j">Github</a></li>
-</ul>
+	<a href="https://github.com/noto-alex-j">Github</a>
 </div>
-
+</div>
+<!-- ------------------------------------------------------------------------------------------------ -->
 </div>
 
 <?php
