@@ -1,7 +1,3 @@
-ul {
-	font-family: cursive;
-}
-
 #nameheader {
 	text-decoration: none;
 	color: black;
@@ -9,9 +5,27 @@ ul {
 
 #nameheader:hover {
 	color: grey;
+	cursor: pointer;
 }
 
 #linkcontainer {
 	display: flex;
-	flex-direction: column;
+	justify-content:space-around;
+	flex: none;
+}
+
+.headercontainer {
+	display:flex;
+	flex-flow: column wrap;
+	align-items: center;
+}
+
+.listcontainer {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
 }
