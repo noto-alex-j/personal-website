@@ -14,19 +14,34 @@
 	flex: none;
 }
 
-.headerandlistcontainer {
-	display:flex;
-	flex-flow: column wrap;
-	align-items: center;
+/* ------------------------------------ Dropdown ----------------------------------------- */
+
+.dropdown {
+	display:inline-block;
+	position: relative;
 }
 
-.listcontainer {
+.dropdown:hover .dropdowncontent {
 	display: flex;
-	flex-flow: column wrap;
-	align-items: center;
+	flex-flow: column nowrap;
+	flex: 0 1 auto;
 }
 
-.listcontainer a {
+.dropdowncontent {
+	display: none;
+	position: absolute;
+}
+
+.dropdowncontent a {
 	text-decoration: none;
 	color: black;
+}
+
+.dropdowncontent a:hover {
+	color: grey;
+}
+
+.dropdown h3 {
+	color: red
+	cursor: pointer;
 }
