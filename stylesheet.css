@@ -10,14 +10,16 @@
 
 #overalllinkcontainer {
 	display: flex;
-	justify-content:space-around;
+	justify-content:center;
 	flex: none;
 }
 
 /* ------------------------------------ Dropdown ----------------------------------------- */
 
+/* -----------------------*/
+
 .dropdown {
-	display:inline-block;
+	display: inline-block;
 	position: relative;
 }
 
@@ -27,6 +29,8 @@
 	flex: 0 1 auto;
 }
 
+/* -----------------------*/
+
 .dropdowncontent {
 	display: none;
 	position: absolute;
@@ -35,13 +39,26 @@
 .dropdowncontent a {
 	text-decoration: none;
 	color: black;
+	border: 1px solid black;
+	width: 200px;
+	text-align: center;
 }
 
 .dropdowncontent a:hover {
 	color: grey;
+	border: 2px solid black;
 }
 
-.dropdown h3 {
-	color: red
+/* -----------------------*/
+
+.dropdownbutton {
+	border: 1px solid black;
+	width: 200px;
+	text-align: center;
+}
+
+.dropdownbutton:hover {
+	color:grey;
 	cursor: pointer;
+	border: 2px solid black;
 }
