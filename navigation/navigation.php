@@ -10,10 +10,20 @@ $articlelist = scandir($articlelinks);
 sort($articlelist);
 ?>
 
-<!-- Links Container -->
+
+<!-- ----------------------------------------Navigation Container------------------------------------------------ -->
+
 <div id= "overalllinkcontainer">
 
-<!-- ----------------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------- -->
+
+<!-- -----Home Subcontainer----- -->
+
+<div class= "dropdown">
+
+	<div class= "dropdownbutton"><h3><a href= "<?php if ($prefix == ""){echo "Home.php";} else {echo "../Home.php";} ?>">Home</a></h3></div>
+
+</div>
 
 <!-- -----Links List Subcontainer----- -->
 
@@ -22,7 +32,6 @@ sort($articlelist);
 	<div class= "dropdownbutton"><h3>Links</h3></div>
 
 	<div class= "dropdowncontent">
-		<a href= "<?php if ($prefix == ""){echo "Home.php";} else {echo "../Home.php";} ?>">Home</a>
 		<?php for ($file = 3; $file < count($linkslist); $file++) { ?>
 		<a href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a>
 		<?php } ?>
@@ -57,11 +66,9 @@ sort($articlelist);
 
 </div>
 
-<!-- ------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------- -->
 
 </div>
 
-<?php
-//Separate folders for navigation, separate arrays for each section
-//link title is filelist[file] which is a string, just remove .php extension from end
-?>
+<!-- -----------------------------------------End Navigation Container-------------------------------------------- -->
+
