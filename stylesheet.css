@@ -1,9 +1,10 @@
-/*------------------------------------------ Page -------------------------------------------*/
+/*--------------------------------------------------- Page ----------------------------------------------------*/
 
 
 #nameheader {
 	text-decoration: none;
 	color: black;
+	text-align: center;
 }
 
 #nameheader:hover {
@@ -11,19 +12,18 @@
 	cursor: pointer;
 }
 
-#pageordercontainer {
-	display: flex;
-	flex-flow: column nowrap;
+#pagelayoutcontainer { /*----------------------- Overall Page Container --------------------------- */
+	display:flex;
+	flex-flow: row nowrap;
+	align-content: 
 }
 
-#titlebar {
+#page {
 	order: 1;
+	display: flex;
+	flex-flow: column wrap;
+	flex: auto;
 }
-
-#pagecontents {
-	order: 2;
-}
-
 
 
 /*--------------------------------------- Navigation Bar Settings-------------------------------------------*/
@@ -33,32 +33,30 @@
 #overalllinkcontainer { /*-------------------Overall Links Container------------------------*/
 	order: 0;
 	display: flex;
-	justify-content:center;
+	flex-flow: column nowrap;
 	flex: 0 1 auto;
 }
 
 /* ------------------------ Dropdown ----------------------------- */
 
-/* -----------Dropdown Behavior------------*/
+/* -------Dropdown Container Behavior-------*/
 
 .dropdown {
 	display: flex;
-	flex-flow: column wrap;
-	flex: 0 1 auto;
+	flex-flow: column nowrap;
 	position: relative;
 }
 
 .dropdown:hover .dropdowncontent {
 	display: flex;
-	flex-flow: column wrap;
-	flex: 0 1 auto;
+	flex-flow: column nowrap;
 }
 
 /* -----------Dropdown Content------------*/
 
 .dropdowncontent {
 	display: none;
-	position: absolute;
+	width: 200px;
 }
 
 .dropdowncontent a {

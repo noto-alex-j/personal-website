@@ -14,18 +14,22 @@
 
 <body>
 
-<div id= "pageordercontainer">
+<div id= "pagelayoutcontainer">
 
-	<div id= "titlebar">
-		<a href= "/Home.php" id="nameheader"><h1>Alex Noto</h1></a>
-		<hr>
-	</div>
+	<div id= "page">
 
-	<div id= "pagecontents">
-		<h3>About Me</h3>
-		<p>
-			I'm Alex. I'm a student at Omaha Code School. I like making things. I want to make the web.
-		</p>
+		<div id= "titlebar">
+			<a href= "/Home.php" id="nameheader"><h1>Alex Noto</h1></a>
+			<hr>
+		</div>
+
+		<div id= "pagecontents">
+			<h3>About Me</h3>
+			<p>
+				I'm Alex. I'm a student at Omaha Code School. I like making things. I want to make the web.
+			</p>
+		</div>
+		
 	</div>
 
 	<?php include("navigation/navigation.php"); ?>
