@@ -51,12 +51,27 @@
 .dropdown:hover .dropdowncontent {
 	display: flex;
 	flex-flow: column nowrap;
+	/* height: 40px; */
+	width: auto;
+	animation: dropdownslidedown .3s;
+	animation-fill-mode: forwards;
 }
 
 /* -----------Dropdown Content------------*/
 
 .dropdowncontent {
-	display: none;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+
+@keyframes dropdownslidedown {
+	0% {
+		height: 0px;
+	}
+	100% {
+		height: 40px;
+	}
 }
 
 .dropdowncontent a {
@@ -66,6 +81,8 @@
 	border: 1px solid black;
 	border-radius: 5px;
 	text-align: center;
+	height: 40px;
+	width: 200px;
 }
 
 .dropdowncontent a:hover {
