@@ -10,11 +10,9 @@
 <title>Article 1</title>
 <head>
 
-<body>
+<body id= "bodylayoutcontainer">
 
-<div id= "pagelayoutcontainer">
-
-	<div id= "page">
+	<div id= "pagecontainer">
 
 		<div id= "pagecontents">
 
@@ -33,9 +31,7 @@
 
 	</div>
 
-	<?php include("../navigation/navigation.php"); ?>
-
-</div>
+<?php include("../navigation/navigation.php"); ?>
 
 
 </body>

@@ -12,11 +12,9 @@
 	<title>Alex Noto Home</title>
 </head>
 
-<body>
+<body id= "bodylayoutcontainer">
 
-<div id= "pagelayoutcontainer">
-
-	<div id= "page">
+	<div id= "pagecontainer">
 
 		<div id= "pagecontents">
 			<h3>About Me</h3>
@@ -27,10 +25,8 @@
 
 	</div>
 
-	<?php include("navigation/navigation.php"); ?>
-
-</div>
-
+<?php include("navigation/navigation.php"); ?>
 
 </body>
+
 </html>

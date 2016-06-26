@@ -1,23 +1,16 @@
-/*--------------------------------------------------- Page ----------------------------------------------------*/
-
-
-#nameheader {
-	text-decoration: none;
-	color: black;
-	text-align: center;
+html {
+	height: 100%;
 }
 
-#nameheader:hover {
-	color: grey;
-	cursor: pointer;
-}
-
-#pagelayoutcontainer { /*----------------------- Overall Page Container --------------------------- */
+#bodylayoutcontainer {
 	display: flex;
 	flex-flow: row nowrap;
+	height: 100%;
 }
 
-#page {
+/*----------------------------------------- Page Content Settings ------------------------------------------ */
+
+#pagecontainer {
 	order: 1;
 	display: flex;
 	flex-flow: column wrap;
@@ -28,7 +21,7 @@
 
 /*--------------------------------------- Navigation Bar Settings-------------------------------------------*/
 
-/*---------------------------------Navigation Bar Overall Container----------------------------------*/
+/*--------------------------Navigation Bar Overall Container-------------------------------*/
 
 #navigationcontainer {
 	order: 0;
@@ -36,17 +29,18 @@
 	flex-flow: column nowrap;
 	flex: 0 1 auto;
 	margin-right: 25px;
-	background-color: blue;
 	height: 100%;
+	background-color: black;
 }
 
 #logo {
 	color: red;
 	font-size: 30px;
 	text-align: center;
+	margin: 20px 0px 20px 0px;
 }
 
-/* ------------------------ Dropdown ----------------------------- */
+/* ------------------------ Dropdown Container ----------------------------- */
 
 /* -------Dropdown Container Behavior-------*/
 
@@ -78,7 +72,7 @@
 		height: 0px;
 	}
 	100% {
-		height: 60px;
+		height: 50px;
 	}
 }
 
@@ -86,27 +80,27 @@
 	text-decoration: none;
 	color: #2820B3;
 	background-color: #FF9C0C;
-	border: 1px solid black;
+	border: 3px outset orange;
 	border-radius: 5px;
 	text-align: center;
-	height: 60px;
-	width: 200px;
+	height: 50px;
+	width: auto;
 }
 
 .dropdowncontent a:hover {
 	color: #130D71;
-	border: 2px solid black;
+	border: 3px inset orange;
 }
 
 /* -----------Dropdown Buttons------------*/
 
 .dropdownbutton {
-	border: 1px solid black;
-	border-radius: 5px;
+	border: 5px outset grey;
+	border-radius: 2px;
 	width: 200px;
 	text-align: center;
-	color: #2820B3;
-	background-color: #08AD73;
+	color: black;
+	background-color: grey;
 }
 
 .dropdownbutton a {
@@ -116,7 +110,7 @@
 .dropdownbutton:hover {
 	color: #130D71;
 	cursor: pointer;
-	border: 2px solid black;
+	border: 5px inset grey;
 }
 
 /*------------------------------------------ End of Navigation -------------------------------------------*/
