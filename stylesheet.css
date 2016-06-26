@@ -13,29 +13,37 @@
 }
 
 #pagelayoutcontainer { /*----------------------- Overall Page Container --------------------------- */
-	display:flex;
+	display: flex;
 	flex-flow: row nowrap;
-	align-content: stretch;
 }
 
 #page {
 	order: 1;
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: column wrap;
 	flex: auto;
+	flex-basis: 50px;
 }
 
 
 /*--------------------------------------- Navigation Bar Settings-------------------------------------------*/
 
+/*---------------------------------Navigation Bar Overall Container----------------------------------*/
 
-
-#overalllinkcontainer { /*-------------------Overall Links Container------------------------*/
+#navigationcontainer {
 	order: 0;
 	display: flex;
 	flex-flow: column nowrap;
 	flex: 0 1 auto;
 	margin-right: 25px;
+	background-color: blue;
+	height: 100%;
+}
+
+#logo {
+	color: red;
+	font-size: 30px;
+	text-align: center;
 }
 
 /* ------------------------ Dropdown ----------------------------- */
@@ -70,7 +78,7 @@
 		height: 0px;
 	}
 	100% {
-		height: 40px;
+		height: 60px;
 	}
 }
 
@@ -81,7 +89,7 @@
 	border: 1px solid black;
 	border-radius: 5px;
 	text-align: center;
-	height: 40px;
+	height: 60px;
 	width: 200px;
 }
 
