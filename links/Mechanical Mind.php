@@ -14,6 +14,8 @@
 
 	<div id= "pagecontainer">
 
+		<div id="topbox"></div>
+
 		<div id= "pagecontents">
 
 			<h3>Mechanical Mind</h3>

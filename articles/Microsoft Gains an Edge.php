@@ -14,6 +14,8 @@
 
 	<div id= "pagecontainer">
 
+		<div id="topbox"></div>
+
 		<div id= "pagecontents">
 
 			<h3>Microsoft gaining an Edge in the browser market?</h3>

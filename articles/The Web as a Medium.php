@@ -14,6 +14,8 @@
 
 	<div id= "pagecontainer">
 
+		<div id="topbox"></div>
+
 		<div id= "pagecontents">
 
 			<h3>The web as a creative medium</h3>

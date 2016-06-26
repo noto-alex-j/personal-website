@@ -16,6 +16,8 @@
 
 	<div id= "pagecontainer">
 
+		<div id="topbox"></div>
+
 		<div id= "pagecontents">
 			<h3>About Me</h3>
 			<p>
