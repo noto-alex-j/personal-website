@@ -6,7 +6,8 @@ html {
 	display: flex;
 	flex-flow: row nowrap;
 	height: 100%;
-	font-family: Helvetica;
+	border-top: 1px solid grey;
+	border-left: 1px solid grey;
 }
 
 /*----------------------------------------- Page Content Settings ------------------------------------------ */
@@ -19,6 +20,8 @@ html {
 	flex-basis: 50px;
 	background-color: #D3D3D3;
 	padding-left: 20px;
+	font-family: "Helvetica";
+	font-weight: lighter;
 }
 
 
@@ -34,14 +37,14 @@ html {
 	height: 100;
 	background-color: white;
 	padding-right: 5px;
-	border-right: 2px dotted grey;
 }
 
 #logo {
 	color: black;
 	font-size: 30px;
 	text-align: center;
-	margin: 20px 0px 20px 0px;
+	margin-bottom: 50px;
+	padding-top: 20px;
 	font-family: "Century Gothic";
 	font-size: 40px;
 	font-weight: lighter;
@@ -55,6 +58,7 @@ html {
 	display: flex;
 	flex-flow: column nowrap;
 	position: relative;
+	font-family: "Century Gothic";
 }
 
 .dropdown:hover .dropdowncontent {
@@ -87,7 +91,7 @@ html {
 	text-decoration: none;
 	color: black;
 	background-color: white;
-	border: 3px outset grey;
+	border-right: 3px outset grey;
 	border-radius: 5px;
 	text-align: center;
 	height: 50px;
@@ -96,14 +100,18 @@ html {
 
 .dropdowncontent a:hover {
 	color: #130D71;
-	border: 3px inset grey;
+	border-right: 3px inset grey;
+}
+
+#currentpage {
+	font-weight: bold;
 }
 
 /* -----------Dropdown Buttons------------*/
 
 .dropdownbutton {
-	border: 3px outset white;
-	border-radius: 2px;
+	border-right: 3px outset grey;
+	border-radius: 5px;
 	width: 200px;
 	text-align: center;
 	color: black;
@@ -112,16 +120,30 @@ html {
 
 .dropdownbutton a {
 	text-decoration: none;
+	color:black;
 }
 
-.dropdownbutton a:visited {
-	color: black;
+.dropdownbutton a:hover {
+	color: #130D71;
 }
 
 .dropdownbutton:hover {
 	color: #130D71;
 	cursor: pointer;
-	border: 3px inset white;
+	border-right: 3px inset grey;
+	border-radius: 10px;
+	animation: buttontransform .15s;
 }
+
+@keyframes buttontransform {
+	0% {
+		border-radius: 5px;
+	}
+
+	100% {
+		border-radius: 10px;
+	}
+}
+
 
 /*------------------------------------------ End of Navigation -------------------------------------------*/

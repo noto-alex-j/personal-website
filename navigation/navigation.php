@@ -35,7 +35,7 @@ sort($articlelist);
 
 		<div class= "dropdowncontent">
 		<?php for ($file = 3; $file < count($linkslist); $file++) { ?>
-		<a href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a>
+		<a href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"<?php if (rtrim($linkslist[$file], ".php") == $title) { echo ' id= "currentpage"'; } ?>><?php echo rtrim($linkslist[$file], ".php"); ?></a> 
 		<?php } ?>
 		</div>
 
@@ -49,7 +49,7 @@ sort($articlelist);
 
 		<div class= "dropdowncontent">
 		<?php for ($file = 3; $file < count($articlelist); $file++) { ?>
-		<a href= "<?php if ($prefix == ""){echo "articles/";} else {echo "../articles/";}?><?php echo ltrim($articlelist[$file], "//articles/"); ?>"><?php echo rtrim($articlelist[$file], ".php"); ?></a>
+		<a href= "<?php if ($prefix == ""){echo "articles/";} else {echo "../articles/";}?><?php echo ltrim($articlelist[$file], "//articles/"); ?>"<?php if (rtrim($articlelist[$file], ".php") == $title) { echo ' id= "currentpage"'; } ?>><?php echo rtrim($articlelist[$file], ".php"); ?></a>
 		<?php } ?>
 		</div>
 

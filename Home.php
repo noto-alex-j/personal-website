@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = "home" ?>
+<?php $title = "Home" ?>
 <?php $dirfix = ""; ?>
 <?php $prefix = ""; ?>
 

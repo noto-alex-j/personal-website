@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = "article2"; ?>
+<?php $title = "The Web as a Medium"; ?>
 <?php $dirfix = "../"; ?>
 <?php $prefix = "articles"; ?>
 

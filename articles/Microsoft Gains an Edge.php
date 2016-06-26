@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = "article1"; ?>
+<?php $title = "Microsoft Gains an Edge"; ?>
 <?php $dirfix = "../"; ?>
 <?php $prefix = "articles"; ?>
 

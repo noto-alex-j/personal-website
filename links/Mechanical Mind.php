@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = "mech"; ?>
+<?php $title = "Mechanical Mind"; ?>
 <?php $dirfix = "../"; ?>
 <?php $prefix = "links"; ?>
 
