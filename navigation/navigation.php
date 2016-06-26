@@ -1,6 +1,3 @@
-
-<link type= "text/css"; rel= "stylesheet"; href= "../stylesheet.css">
-
 <?php 
 $linkslinks = ($dirfix . "links"); 
 $linkslist = scandir($linkslinks);
@@ -67,6 +64,20 @@ sort($articlelist);
 		</div>
 
 	</div>
+
+<!-- ----------Theme Switcher------------- -->
+
+	<div class= "dropdown">
+
+			<div class= "dropdownbutton"><h3>Theme Switcher</h3></div>
+
+			<div class= "dropdowncontent">
+				<a href="?theme=light">Light</a>
+				<a href="?theme=dark">Dark</a>
+			</div>
+
+	</div>
+
 
 <!-- ------------------------------------------- -->
 

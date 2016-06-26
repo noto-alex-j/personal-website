@@ -20,9 +20,10 @@ html {
 	flex-flow: column wrap;
 	flex: auto;
 	flex-basis: 50px;
-	background-color: #EAEAEA;
+	background-color: black;
 	font-family: "Helvetica";
 	font-weight: lighter;
+	color: white;
 	border-right: 50px solid turquoise;
 }
 

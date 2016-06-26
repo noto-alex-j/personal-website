@@ -6,6 +6,8 @@
 
 <html>
 
+<?php if ($_GET["theme"] == "dark"){echo '<link type= "text/css"; rel= "stylesheet"; href= "/personal-website/stylesheet alt.css">';} elseif ($_GET["theme"] == "light"){echo '<link type= "text/css"; rel= "stylesheet"; href= "/personal-website/stylesheet.css">';} else{echo '<link type= "text/css"; rel= "stylesheet"; href= "/personal-website/stylesheet.css">';} ?>
+
 <head>
 <title>Goals</title>
 </head>
