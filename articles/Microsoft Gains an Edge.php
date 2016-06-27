@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-
 <?php $title = "Microsoft Gains an Edge"; ?>
 <?php $dirfix = "../"; ?>
 <?php $prefix = "articles"; ?>
 
-<html>
-
-<?php if ($_GET["theme"] == "dark"){echo '<link type= "text/css"; rel= "stylesheet"; href= "/stylesheet alt.css">';} elseif ($_GET["theme"] == "light"){echo '<link type= "text/css"; rel= "stylesheet"; href= "/stylesheet.css">';} else{echo '<link type= "text/css"; rel= "stylesheet"; href= "/stylesheet.css">';} ?>
-
-<head>
-<title>Article 1</title>
-<head>
+<?php include("../header.php"); ?>
 
 <body id= "bodylayoutcontainer">
 
