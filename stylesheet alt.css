@@ -17,7 +17,7 @@ html {
 #pagecontainer {
 	order: 1;
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: column nowrap;
 	flex: auto;
 	flex-basis: 50px;
 	background-color: black;

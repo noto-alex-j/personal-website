@@ -2,8 +2,6 @@
 <?php $dirfix = ""; ?>
 <?php $prefix = ""; ?>
 
-<!DOCTYPE html>
-
 <?php include("header.php"); ?>
 
 <body id= "bodylayoutcontainer">

@@ -1,0 +1,54 @@
+#pagecontents {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+#rpsweapons {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 350px;
+	width: 1050px;
+}
+
+#rpsweapons a {
+	display: flex;
+}
+
+
+/*-- ------------------------------------Results Container-------------------------- */
+
+#results {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 350px;
+	width: 1050px;
+}
+
+#playerchoice {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+#playerchoice img {
+	display:flex;
+}
+
+#playerchoice h2 {
+	text-align: center;
+}
+
+
+#computerchoice {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+#computerchoice img {
+	display: flex;
+}
+
+#computerchoice h2 {
+	text-align: center;
+}
+
