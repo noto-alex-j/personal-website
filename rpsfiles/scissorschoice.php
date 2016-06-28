@@ -8,12 +8,25 @@
 
 </div>
 
+
+<?php
+$computerChoice = rand(1,3);
+if ($computerChoice == 1) {
+	echo '<img src= "../images/lose.png">';
+}
+elseif ($computerChoice == 2) {
+	echo '<img src= "../images/win.png">';
+}
+else {
+	echo '<img src= "../images/tie.png">';
+}
+?>
+
 <div id= "computerchoice">
 
 <h2>Computer chose:</h2>
 <br>
 <?php
-$computerChoice = rand(1,3);
 if ($computerChoice == 1) {
 	echo '<img src= "../images/rockhand.png">';
 }
