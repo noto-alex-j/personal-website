@@ -2,21 +2,17 @@
 
 <div id= "results">
 
+<!-- -------------Player Choice Container--------------- -->
+
 <div id= "playerchoice">
 <h2>You chose:</h2>
 <br>
 <?php
-if ($playerchoice == "rock") {
-	echo '<img src= "../images/rockhand.png">';
-}
-elseif ($playerchoice == "paper") {
-	echo '<img src= "../images/paperhand.png">';
-}
-else {
-	echo '<img src= "../images/scissorshand.png">';
-}
+echo picturechoice($playerchoice);
 ?>
 </div>
+
+<!-- -------------Results Image Code--------------- -->
 
 <?php
 if (result($playerchoice,$computerchoice) == "win") {
@@ -30,19 +26,13 @@ else {
 }
 ?>
 
+<!-- -------------Computer Choice Container--------------- -->
+
 <div id= "computerchoice">
 <h2>Computer chose:</h2>
 <br>
 <?php
-if ($computerchoice == "rock") {
-	echo '<img src= "../images/rockhand.png">';
-}
-elseif ($computerchoice == "paper") {
-	echo '<img src= "../images/paperhand.png">';
-}
-else {
-	echo '<img src= "../images/scissorshand.png">';
-}
+echo picturechoice($computerchoice);
 ?>
 </div>
 

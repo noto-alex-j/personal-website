@@ -26,7 +26,7 @@
 			}
 			?>
 			
-			<a href= "Rock%20Paper%20Scissors.php"><h3>Replay</h3></a>
+			<a href= "Rock%20Paper%20Scissors.php" id= "replaybutton">Replay</a>
 
 
 		</div>
