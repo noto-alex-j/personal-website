@@ -18,17 +18,11 @@
 			<br>
 
 			<?php
-			if ($_GET["weapon"] == "rock") {
-				include "../rpsfiles/results.php";
-			}
-			elseif ($_GET["weapon"] == "paper") {
-				include "../rpsfiles/results.php";
-			}
-			elseif ($_GET["weapon"] == "scissors") {
-				include "../rpsfiles/results.php";
-			}
-			else {	
+			if ($_GET["weapon"] == "") {
 				include "../rpsfiles/rps-choose-weapon.php";
+			}
+			else {
+				include "../rpsfiles/results.php";
 			}
 			?>
 			
