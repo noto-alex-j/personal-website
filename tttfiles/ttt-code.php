@@ -34,11 +34,18 @@ $osquare9 = "        $player2";
 
 $firstmove = "         ";
 
+/* ---- Takes the current board layout query and the new board layout query and merges them ---- */
 
 function queryreplace($first,$second) {
+	$first = str_split($first);
+	$second = str_split($second);
 	foreach ($first as $firstkey => $boardarrange) {
-		if ($first[$firstkey] == " " && $second[$firstkey] == "X") {
-			$first[$firstkey] = $second[$firstkey];
+		if ($first[$firstkey] == " " && $second[$firstkey] == "X" || "O") {
+			if ($first[$firstkey] == "X" && $second[$firstkey] == "O" || $first[$firstkey] == "O" && $second[$firstkey] == "X") {
+			}
+			else {
+				$first[$firstkey] = $second[$firstkey];
+			}
 		}
 	}
 	return $first;
