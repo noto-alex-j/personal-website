@@ -19,7 +19,7 @@
 
 	</div>
 
-<?php include("navigation/navigation.php"); ?>
+	<?php include("navigation/navigation.php"); ?>
 
 </body>
 
