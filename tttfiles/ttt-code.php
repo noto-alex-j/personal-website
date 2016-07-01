@@ -3,32 +3,91 @@
 $player1 = "X";
 $player2 = "O";
 
-/* ------ List of box links for Player 1 and Player 2 ------ */
 
-$xsquare1 = $player1 . "--------";
-$xsquare2 = "-" . $player1 . "-------";
-$xsquare3 = "--" . $player1 . "------";
-$xsquare4 = "---" . $player1 . "-----";
-$xsquare5 = "----" . $player1 . "----";
-$xsquare6 = "-----" . $player1 . "---";
-$xsquare7 = "------" . $player1 . "--";
-$xsquare8 = "-------" . $player1 . "-";
-$xsquare9 = "--------" . $player1;
+$currentboard = implode($_GET);
 
-$osquare1 = $player2 . "--------";
-$osquare2 = "-" . $player2 . "-------";
-$osquare3 = "--" . $player2 . "------";
-$osquare4 = "---" . $player2 . "-----";
-$osquare5 = "----" . $player2 . "----";
-$osquare6 = "-----" . $player2 . "---";
-$osquare7 = "------" . $player2 . "--";
-$osquare8 = "-------" . $player2 . "-";
-$osquare9 = "--------" . $player2;
+/* Takes $_GET and adds appropriate query ending, to be added to end of string to make link */
+
+function linkappender1 ($player1) {
+	$currentboard = implode($_GET);
+	foreach ($player1 as $boxnumber => $entry) {
+		if ($currentboard == "") {
+			$player1[$boxnumber] = $entry . "=X";
+		}
+		else {
+			$player1[$boxnumber] = "&" . $entry . "=X";
+		}
+	}
+	return $player1;
+}
+
+function linkappender2 ($player2) {
+	$currentboard = implode($_GET);
+	foreach ($player2 as $boxnumber => $entry) {
+		if ($currentboard == "") {
+			$player2[$boxnumber] = $entry . "=O";
+		}
+		else {
+			$player2[$boxnumber] = "&" . $entry . "=O";
+		}
+	}
+	return $player2;
+}
+
+$player1 = array(0,1,2,3,4,5,6,7,8);
+$player2 = array(0,1,2,3,4,5,6,7,8);
+
+$links1 = linkappender1($player1);
+$links2 = linkappender2($player2);
 
 
-/* ---- Takes the current board layout query and the new board layout query and merges them ---- */
 
-function queryreplace($first,$second) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------ List of box links for Player 1 and Player 2 ------ 
+
+$xsquare1 = "X--------";
+$xsquare2 = "-X-------";
+$xsquare3 = "--X------";
+$xsquare4 = "---X-----";
+$xsquare5 = "----X----";
+$xsquare6 = "-----X---";
+$xsquare7 = "------X--";
+$xsquare8 = "-------X-";
+$xsquare9 = "--------X";
+
+$osquare1 = "O--------";
+$osquare2 = "-O-------";
+$osquare3 = "--O------";
+$osquare4 = "---O-----";
+$osquare5 = "----O----";
+$osquare6 = "-----O---";
+$osquare7 = "------O--";
+$osquare8 = "-------O-";
+$osquare9 = "--------O";
+
+
+
+ ---- Takes the current board layout query and the new board layout query and merges them ---- 
+
+function boardpositionchanger($first,$second) {
 	$first = str_split($first);
 	$second = str_split($second);
 	foreach ($first as $firstkey => $boardarrange) {
@@ -43,9 +102,9 @@ function queryreplace($first,$second) {
 	return $first;
 }
 
-$boardarrangement = "---------";
-$boardarrangementnew = queryreplace($boardarrangement,$_GET["board"]);
-$playermove = $_GET["board"];
+*/
+
+
 
 
 ?>
