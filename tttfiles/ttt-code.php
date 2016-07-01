@@ -6,7 +6,7 @@ $player2 = "O";
 
 $currentboard = implode($_GET);
 
-/* Takes $_GET and adds appropriate query ending, to be added to end of string to make link */
+/* ----Takes $_GET and adds appropriate query ending, to be added to end of string to make link---- */
 
 function linkappender1 ($player1) {
 	$currentboard = implode($_GET);
@@ -34,20 +34,26 @@ function linkappender2 ($player2) {
 	return $player2;
 }
 
+/* Player 1 and 2 arrays fed into link appender to generate appropriate link endings */
+/* The generated link endings are then affixed to the existing $_GET string and become new hrefs */
+
 $player1 = array(0,1,2,3,4,5,6,7,8);
 $player2 = array(0,1,2,3,4,5,6,7,8);
 
 $links1 = linkappender1($player1);
 $links2 = linkappender2($player2);
 
+/* ------ Switches player turn based on last element in query param ------ */
 
-
-
-
-
-
-
-
+if (end($_GET) == "X") {
+	$links = $links2;
+}
+elseif (end($_GET) == "O") {
+	$links = $links1;
+}
+else {
+	$links = $links1;
+}
 
 
 
