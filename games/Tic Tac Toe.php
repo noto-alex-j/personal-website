@@ -17,7 +17,7 @@
 			<h1>Tic Tac Toe</h1>
 			
 
-			<?php include "../tttfiles/ttt-board.php"; ?>
+			<?php include "../tttfiles/ttt-board-dual-player.php"; ?>
 
 
 		</div>
