@@ -1,17 +1,5 @@
 <?php include "ttt-code.php"; ?>
 
-<div class= "playerturn"><?php
-if (end($_GET) == "X") {
-	echo "Player 2's Turn";
-}
-elseif (end($_GET) == "O") {
-	echo "Player 1's Turn";
-}
-else {
-	echo "Player 1's Turn";
-}
-?></div>
-
 <div class= "tttbox">
 
 	<div class= "row">
@@ -35,9 +23,19 @@ else {
 
 </div>
 
-<?php
-echo winnercheck($_GET,$xwin,$owin);
-?>
+<div class= "playerturn"><?php
+if (end($_GET) == "X") {
+	echo "Player 2's Turn";
+}
+elseif (end($_GET) == "O") {
+	echo "Player 1's Turn";
+}
+else {
+	echo "Player 1's Turn";
+}
+?></div>
+
+<div class="winner"><?php echo winnercheck($_GET,$xwin,$owin); ?></div>
 
 <div class= "resetbutton"><a href="Tic%20Tac%20Toe.php">Reset</a></div>
 
