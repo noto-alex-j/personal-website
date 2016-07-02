@@ -35,6 +35,9 @@ else {
 
 </div>
 
+<?php
+echo winnercheck($_GET,$xwin,$owin);
+?>
 
 <div class= "resetbutton"><a href="Tic%20Tac%20Toe.php">Reset</a></div>
 

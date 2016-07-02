@@ -56,14 +56,71 @@ else {
 }
 
 
+/* --------- Determines winning board arrangement ----------- */
+
+$xwin = array(
+	array(0=>"X",1=>"X",2=>"X"),
+	array(3=>"X",4=>"X",5=>"X"),
+	array(6=>"X",7=>"X",8=>"X"),
+	array(0=>"X",3=>"X",6=>"X"),
+	array(1=>"X",4=>"X",7=>"X"),
+	array(2=>"X",5=>"X",8=>"X"),
+	array(0=>"X",4=>"X",8=>"X"),
+	array(2=>"X",4=>"X",6=>"X")
+);
+
+$owin = array(
+	array(0=>"O",1=>"O",2=>"O"),
+	array(0=>"O",1=>"O",2=>"O"),
+	array(6=>"O",7=>"O",8=>"O"),
+	array(0=>"O",3=>"O",6=>"O"),
+	array(1=>"O",4=>"O",7=>"O"),
+	array(2=>"O",5=>"O",8=>"O"),
+	array(0=>"O",4=>"O",8=>"O"),
+	array(2=>"O",4=>"O",6=>"O")
+);
+
+/* Checks for winning X arrangement and if present returns Player 1 Wins */
+/* Prevents double reporting */
+
+/* function xwinnercheck($GET, $win) {
+	$GET = $_GET;
+	foreach ($win as $winningarray) {
+		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+			echo "Player 1 Wins";
+		}
+	}
+}
+
+function owinnercheck($GET, $win) {
+	$GET = $_GET;
+	foreach ($win as $winningarray) {
+		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+			echo "Player 2 Wins";
+		}
+	}
+} */
 
 
-
-
-
-
-
-
+function winnercheck($GET, $xwin, $owin) {
+	$winner = "";
+	$GET = $_GET;
+	foreach ($xwin as $winningarray) {
+		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+			if ($winner == "") {
+				$winner = "Player 1 Wins";
+			}
+		}
+	}
+	foreach ($owin as $winningarray) {
+		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+			if ($winner == "") {
+				$winner = "Player 2 Wins";
+			}
+		}
+	}
+	return $winner;
+}
 
 
 
