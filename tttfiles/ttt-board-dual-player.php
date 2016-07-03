@@ -2,6 +2,8 @@
 
 <div class= "tttbox">
 
+	<div class="boxtitle">Tic Tac Toe</div>
+
 	<div class= "row">
 		<a href= "<?php if(($_GET[0]=='X')||($_GET[0]=='O')){}else{echo "?".$_SERVER['QUERY_STRING']; echo $links[0];}; ?>"><div class= "square"><?php echo $_GET[0]; ?></div></a>
 		<a href= "<?php if(($_GET[1]=='X')||($_GET[1]=='O')){}else{echo "?".$_SERVER['QUERY_STRING']; echo $links[1];}; ?>"><div class= "square"><?php echo $_GET[1]; ?></div></a>
@@ -21,8 +23,6 @@
 	</div>
 
 
-</div>
-
 <div class= "playerturn"><?php
 if (end($_GET) == "X") {
 	echo "Player 2's Turn";
@@ -38,6 +38,8 @@ else {
 <div class="winner"><?php echo winnercheck($_GET,$xwin,$owin); ?></div>
 
 <div class= "resetbutton"><a href="Tic%20Tac%20Toe.php">Reset</a></div>
+
+</div>
 
 
 

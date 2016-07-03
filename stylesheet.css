@@ -8,8 +8,6 @@ html {
 	flex-flow: row nowrap;
 	height: 100%;
 	width: auto;
-	border-top: 1px solid grey;
-	border-left: 1px solid grey;
 }
 
 /*----------------------------------------- Page Content Settings ------------------------------------------ */
@@ -50,6 +48,7 @@ html {
 	height: 100%;
 	background-color: white;
 	padding-right: 5px;
+	border: 1px solid black;
 }
 
 #logo {

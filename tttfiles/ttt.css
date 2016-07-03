@@ -7,9 +7,24 @@
 .tttbox {
 	display: flex;
 	flex-flow: column nowrap;
-	height: 300px;
-	width:300px;
+	height: auto;
+	width:auto;
+	align-items: center;
+	margin-top: 50px;
 	border: 3px solid black;
+	border-radius: 10px;
+	padding: 1px;
+	background: white;
+}
+
+.boxtitle {
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	margin: 20px 0px 20px 0px;
+	font-size: 36px;
+	font-weight: bolder;
+	color: black;
 }
 
 .row {
@@ -27,35 +42,40 @@
 	height: 100px;
 	width: 100px;
 	border: 3px solid black;
+	border-radius: 10px;
 	font-size: 50px;
 	align-items: center;
 	justify-content: center;
 }
 
+.playerturn {
+	display: flex;
+	margin-top: 25px;
+	color: black;
+}
+
+.winner {
+	display: flex;
+	margin-top: 10px;
+	font-size: 40px;
+	color: black;
+}
+
 .resetbutton {
+	display: flex;
 	height: 30px;
 	width: 70px;
-	text-align: center;
+	justify-content: center;
 	line-height: 30px;
-	margin-top: 20px;
+	margin: 20px 0px 20px 0px;
 	border: 2px solid black;
 	border-radius: 3px;
 	padding: 2px 4px 2px 4px;
 }
 
-.playerturn {
-	display: flex;
-	margin-top: 25px;
-}
-
 .resetbutton a {
 	text-decoration: none;
 	color: black;
-}
-
-.winner {
-	margin-top: 10px;
-	font-size: 40px;
 }
 
 
