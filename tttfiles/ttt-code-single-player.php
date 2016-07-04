@@ -91,19 +91,23 @@ function computermovelinkendarrays($links,$GET,$xwin,$owin){
 	return $allPossibleLinks;
 }
 
+$cpulinkends = computermovelinkendarrays($links,$GET,$xwin,$owin);
 
-function determineComputerMove($links,$GET,$xwin,$owin) {
-	$cpulinkends = computermovelinkendarrays($links,$GET,$xwin,$owin);
+
+function determineWinningComputerMove($cpulinkends,$xwin,$owin) {
 	foreach($cpulinkends as $key => $end) {
 		if (winnercheck($end,$xwin,$owin) == "Player 1 Wins") {
-			echo "the winner is";
-			print_r($end);
-			return $end;
+			return http_build_query($end);
 		}
 		
 	}
 }
 
+function computermove ($cpulinksends,$xwin,$owin) {
+	if (determineWinningComputerMove($cpulinkends,$xwin,$owin)){
+		
+	}
+}
 
 
 
