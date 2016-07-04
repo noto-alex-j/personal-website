@@ -27,6 +27,28 @@
 	color: black;
 }
 
+.switcher {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+.switcher__single {
+	border-right: 1px solid black;
+	padding: 5px;
+	text-decoration: none;
+	color: black;
+}
+
+.switcher__double {
+	border-left: 1px solid black;
+	padding: 5px;
+	text-decoration: none;
+	color: black;
+}
+
 .row {
 	display: flex;
 	flex-flow: row nowrap;

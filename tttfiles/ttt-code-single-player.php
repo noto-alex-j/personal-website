@@ -79,17 +79,30 @@ function winnercheck($GET, $xwin, $owin) {
 
 $currentboard = $_GET;
 
-function computermovelinkend($links,$xwin,$owin){
-	foreach ($links as $key => $linkend) {
-		$possiblelink = $_GET . $linkend;
-		if (winnercheck($possiblelink,$xwin,$owin)  == "Player 2 Wins"){
-			$computermove = $links[$key];
-		}
-	}
-	return $computermove;
-}
 	
+function computermovelinkendarrays($links,$GET,$xwin,$owin){
+	$GET = http_build_query($GET);
+	$allPossibleLinks = array();
+	foreach ($links as $key => $linkend) {
+		$concat = $GET . $linkend;
+		parse_str($concat, $possiblelink);
+		array_push($allPossibleLinks, $possiblelink);
+	}
+	return $allPossibleLinks;
+}
 
+
+function determineComputerMove($links,$GET,$xwin,$owin) {
+	$cpulinkends = computermovelinkendarrays($links,$GET,$xwin,$owin);
+	foreach($cpulinkends as $key => $end) {
+		if (winnercheck($end,$xwin,$owin) == "Player 1 Wins") {
+			echo "the winner is";
+			print_r($end);
+			return $end;
+		}
+		
+	}
+}
 
 
 

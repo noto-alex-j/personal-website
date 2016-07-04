@@ -14,8 +14,11 @@
 
 		<div id= "pagecontents">
 			
-
-			<?php include "../tttfiles/ttt-board-dual-player.php"; ?>
+			<?php 
+			if ($_GET["mode"] == "single") { include "../tttfiles/ttt-board-single-player.php"; }
+			elseif ($_GET["mode"] == "double") {include "../tttfiles/ttt-board-dual-player.php"; }
+			else {include "../tttfiles/ttt-board-single-player.php"; } 
+			?>
 
 
 		</div>
