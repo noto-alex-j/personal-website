@@ -6,59 +6,34 @@ $game = $_GET;
 
 
 
-// Array ( [mode] => single [0] => - [1] => - [2] => - [3] => - [4] => - [5] => - [6] => - [7] => - [8] => - [player] => X [turn] => 1 [score1] => 0 [score2] => 0 )
+// Array ( [mode] => single [0] => - [1] => - [2] => - [3] => - [4] => - [5] => - [6] => - [7] => - [8] => - [computer] => X [user] => O [turn] => 1 [score1] => 0 [score2] => 0 )
 
 
 /* ------------------------------------ Board Logic -------------------------------------------- */
 
-/* -------------------- Turn Switch ----------------------- */
-
-if ($game[turn] % 2 == 0) {
-	$game[player] = "O";
-}
-else {
-	$game[player] = "X";
-}
 
 /* ------ Places player marker in each possible square ----- */
 
-function moveplacer ($game) {
+function usermoveplacer ($game) {
 	$moveset = array();
 	foreach ($game as $key => $value) {
 		$move = $game;
 		if (is_int($key)) {
-			$move[$key] = $move["player"];
+			$move[$key] = $move["user"];
 			array_push($moveset,$move);
 		}
 	}
 	return $moveset;
 }
 
-$moveset = moveplacer($game);
+$usermoves = usermoveplacer($game);
 
-/* ------- Changes player from X to O on each turn ------ */
-
-function playerchanger($moveset) {
-	$moveset2 = array();
-	foreach($moveset as $move) {
-		if($move["player"] == "X") {
-			$move["player"] = "O";
-		} 
-		elseif($move["player"] == "O") {
-			$move["player"] = "X";
-		}
-		array_push($moveset2,$move);
-	}
-	return $moveset2;
-}
-
-$playerchangedmoveset = playerchanger($moveset);
 
 /* -------- Increases turn counter on each turn -------- */
 
-function turnchanger($playerchangedmoveset) {
+function userturnchanger($usermoves) {
 	$moveset3 = array();
-	foreach($playerchangedmoveset as $move) {
+	foreach($usermoves as $move) {
 		$move["turn"] += 1;
 		array_push($moveset3,$move);
 	}
@@ -66,10 +41,8 @@ function turnchanger($playerchangedmoveset) {
 }
 
 
-$playerturnchangedmoveset = (turnchanger($playerchangedmoveset));
+$usermoveset = (userturnchanger($usermoves));
 
-
-print_r($game);
 
 /* ------------------------------------ Winner Check -------------------------------------------- */
 
@@ -123,31 +96,51 @@ function winnercheck($game, $xwin, $owin) {
 /* ------------------------------------ Computer Logic -------------------------------------------- */
 
 
+function computermoveplacer ($game) {
+	$moveset = array();
+	foreach ($game as $key => $value) {
+		$move = $game;
+		if (is_int($key)) {
+			$move[$key] = $move["computer"];
+			array_push($moveset,$move);
+		}
+	}
+	return $moveset;
+}
+
+$computermoves = computermoveplacer($game);
+
+
+/* -------- Increases turn counter on each turn -------- */
+
+function computerturnchanger($computermoves) {
+	$moveset3 = array();
+	foreach($computermoves as $move) {
+		$move["turn"] += 1;
+		array_push($moveset3,$move);
+	}
+	return $moveset3;
+}
+
+
+$computermoveset = (computerturnchanger($computermoves));
+
+
+
+
+
 /* ------------------- Winning/Losing Computer Moves -------------------- */
 
-function winningcomputermove($playerturnchangedmoveset,$xwin,$owin,$game){
-	foreach($playerturnchangedmoveset as $key => $move) {
-		if(winnercheck($move,$xwin,$owin) == $game["player"]){
+function winningcomputermove($computermoveset,$xwin,$owin,$game){
+	foreach($computermoveset as $key => $move) {
+		if(winnercheck($move,$xwin,$owin) == $game["computer"]){
 			return $move;
 		}
 	}
 }
 
-$winningcomputermove = winningcomputermove($playerturnchangedmoveset,$xwin,$owin,$game);
+$winningcomputermove = winningcomputermove($computermoveset,$xwin,$owin,$game);
 
-
-function usermoveplacer ($game) {
-		$usermoves = array();
-		foreach ($game as $key => $value) {
-			$move = $game;
-			if (is_int($key)) {
-				$move[$key] = $move["user"];
-				array_push($usermoves,$move);
-			}
-		}
-		return $usermoves;
-	}
-$usermoveset = usermoveplacer ($game);
 
 function losingcomputerblock($usermoveset,$xwin,$owin,$game){
 	foreach($usermoveset as $key => $move) {
@@ -159,30 +152,41 @@ function losingcomputerblock($usermoveset,$xwin,$owin,$game){
 
 $losingcomputerblock = losingcomputerblock($usermoveset,$xwin,$owin,$game);
 
-/* -------------------------------------------------------------------------- */
+/* ----------------------Chooses random open square--------------------------- */
+
+function randomchoice($game){
+	$randomsquare=array();
+		foreach($game as $key => $box){
+			if($box == "-"){
+				array_push($randomsquare, $key);
+			}
+		}
+	$randomkey = array_rand($randomsquare);
+	return $randomsquare[$randomkey];
+}
+
+$randomchoice = randomchoice($game);
+
+/* ----------------------------- Computer Move Logic --------------------------------- */
 
 
-
-function computermove($winningcomputermove,$losingcomputerblock,$game,$playerturnchangedmoveset){
+function computermove($winningcomputermove,$losingcomputerblock,$game,$computermoveset,$randomchoice){
 	if($winningcomputermove != ""){
 		return $winningcomputermove;
 	}
 	elseif($losingcomputerblock != ""){
-		return $playerturnchangedmoveset[$losingcomputerblock];
+		return $computermoveset[$losingcomputerblock];
 	}
 	elseif($game[4] == "-"){
-		return $playerturnchangedmoveset[4];
+		return $computermoveset[4];
 	}
-	elseif($game[0]=="-"||$game[2]=="-"||$game[6]=="-"||$game[8]=="-"){
-		
+	else{
+		return $computermoveset[$randomchoice];
 	}
 }
 
 
-
-
-
-
+$computermove = (computermove($winningcomputermove,$losingcomputerblock,$game,$computermoveset,$randomchoice));
 
 
 

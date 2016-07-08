@@ -4,7 +4,7 @@
 
 	<div class="boxtitle">Tic Tac Toe</div>
 
-	<div class="switcher"><a href="?mode=single&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&player=X&turn=1&score1=0&score2=0" class="switcher__single">One Player</a><a href="?mode=double&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&player=X&turn=1&score1=0&score2=0" class= "switcher__double">Two Player</a></div>
+	<div class="switcher"><a href="?mode=single&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&computer=X&user=O&turn=1&score1=0&score2=0" class="switcher__single">One Player</a><a href="?mode=double&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&player=X&turn=1&score1=0&score2=0" class= "switcher__double">Two Player</a></div>
 
 	<div class= "row">
 		<a href= "<?php if($game[0] == "-") {echo "?" . http_build_query($playerturnchangedmoveset[0]);}?>"><div class= "square"><?php echo $game[0]; ?></div></a>
@@ -39,7 +39,7 @@ else {
 
 <div class="winner"><?php if ($game["turn"]<10){echo winnercheck($game,$xwin,$owin);}else{echo "Draw";} ?></div>
 
-<div class= "resetbutton"><a href="Tic%20Tac%20Toe.php?mode=double&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&player=X&turn=1&score1=0&score2=0"">Reset</a></div>
+<div class= "resetbutton"><a href="Tic%20Tac%20Toe.php?mode=double&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&player=X&turn=1&score1=0&score2=0">Reset</a></div>
 
 </div>
 
