@@ -1,6 +1,79 @@
 <?php
 
-/* --------- Determines winning board arrangement ----------- */
+$game = $_GET;
+
+
+
+
+
+// Array ( [mode] => single [0] => - [1] => - [2] => - [3] => - [4] => - [5] => - [6] => - [7] => - [8] => - [player] => X [turn] => 1 [score1] => 0 [score2] => 0 )
+
+
+/* ------------------------------------ Board Logic -------------------------------------------- */
+
+/* -------------------- Turn Switch ----------------------- */
+
+if ($game[turn] % 2 == 0) {
+	$game[player] = "O";
+}
+else {
+	$game[player] = "X";
+}
+
+/* ------ Places player marker in each possible square ----- */
+
+function moveplacer ($game) {
+	$moveset = array();
+	foreach ($game as $key => $value) {
+		$move = $game;
+		if (is_int($key)) {
+			$move[$key] = $move["player"];
+			array_push($moveset,$move);
+		}
+	}
+	return $moveset;
+}
+
+$moveset = moveplacer($game);
+
+/* ------- Changes player from X to O on each turn ------ */
+
+function playerchanger($moveset) {
+	$moveset2 = array();
+	foreach($moveset as $move) {
+		if($move["player"] == "X") {
+			$move["player"] = "O";
+		} 
+		elseif($move["player"] == "O") {
+			$move["player"] = "X";
+		}
+		array_push($moveset2,$move);
+	}
+	return $moveset2;
+}
+
+$playerchangedmoveset = playerchanger($moveset);
+
+/* -------- Increases turn counter on each turn -------- */
+
+function turnchanger($playerchangedmoveset) {
+	$moveset3 = array();
+	foreach($playerchangedmoveset as $move) {
+		$move["turn"] += 1;
+		array_push($moveset3,$move);
+	}
+	return $moveset3;
+}
+
+
+$playerturnchangedmoveset = (turnchanger($playerchangedmoveset));
+
+
+print_r($game);
+
+/* ------------------------------------ Winner Check -------------------------------------------- */
+
+/* ------------ Determines winning board arrangement -------------- */
 
 $xwin = array(
 	array(0=>"X",1=>"X",2=>"X"),
@@ -24,67 +97,7 @@ $owin = array(
 	array(2=>"O",4=>"O",6=>"O")
 );
 
-$player1 = "X";
-$player2 = "O";
-
-if ($game[turn] % 2 == 0) {
-	$game[player] = "O";
-}
-else {
-	$game[player] = "X";
-}
-
-
-$game = $_GET;
-
-
-function moveplacer ($game) {
-	$moveset = array();
-	foreach ($game as $key => $value) {
-		$move = $game;
-		if (is_int($key)) {
-			$move[$key] = $move["player"];
-			array_push($moveset,$move);
-		}
-	}
-	return $moveset;
-}
-
-$moveset = moveplacer($game);
-
-function playerchanger($moveset) {
-	$moveset2 = array();
-	foreach($moveset as $move) {
-		if($move["player"] == "X") {
-			$move["player"] = "O";
-		} 
-		elseif($move["player"] == "O") {
-			$move["player"] = "X";
-		}
-		array_push($moveset2,$move);
-	}
-	return $moveset2;
-}
-
-$playerchangedmoveset = playerchanger($moveset);
-
-
-
-function turnchanger($playerchangedmoveset) {
-	$moveset3 = array();
-	foreach($playerchangedmoveset as $move) {
-		$move["turn"] += 1;
-		array_push($moveset3,$move);
-	}
-	return $moveset3;
-}
-
-
-$playerturnchangedmoveset = (turnchanger($playerchangedmoveset));
-
-
-// print_r($game);
-
+/* --- Compares current board arrangement to each winning arrangement-- */
 
 function winnercheck($GET, $xwin, $owin) {
 	$GET = $_GET;
@@ -106,6 +119,9 @@ function winnercheck($GET, $xwin, $owin) {
 	return $winner;
 }
 
+
+
+/* ------------------------------------ Computer Logic -------------------------------------------- */
 
 ?>
 

@@ -39,7 +39,7 @@ else {
 
 <div class="winner"><?php echo winnercheck($_GET,$xwin,$owin); ?></div>
 
-<div class= "resetbutton"><a href="Tic%20Tac%20Toe.php">Reset</a></div>
+<div class= "resetbutton"><a href="Tic%20Tac%20Toe.php?mode=single&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&player=X&turn=1&score1=0&score2=0"">Reset</a></div>
 
 </div>
 

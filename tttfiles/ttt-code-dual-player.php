@@ -24,8 +24,6 @@ $owin = array(
 	array(2=>"O",4=>"O",6=>"O")
 );
 
-$player1 = "X";
-$player2 = "O";
 
 if ($game[turn] % 2 == 0) {
 	$game[player] = "O";

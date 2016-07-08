@@ -1,44 +1,5 @@
 <?php
 
-$playerx = 1;
-$playero = 2;
-
-$game = array(0=>"",1=>"",2=>"",3=>"",4=>"",5=>"",6=>"",7=>"",8=>"",player=>"",turn=>"",score1=>"",score2=>"");
-
-/* Decided that it's easier to just include the & in the first query */
-
-
-
-/* ------ Switches player turn based on last element in query param ------ */
-
-
-
-
-
-
-/* Checks for winning X arrangement and if present returns Player 1 Wins */
-/* Still double reporting */
-
-function winnercheck($GET, $xwin, $owin) {
-	$GET = $_GET;
-	$winner = "";
-	foreach ($xwin as $winningarray) {
-		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
-			if ($winner === "") {
-				$winner = "Player 1 Wins";
-			}
-		}
-	}
-	foreach ($owin as $winningarray) {
-		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
-			if ($winner === "") {
-				$winner = "Player 2 Wins";
-			}
-		}
-	}
-	return $winner;
-}
-
 
 /* ---------------------------------- Computer Player Logic ------------------------------------- */
 
