@@ -34,7 +34,6 @@ else {
 	$game[player] = "X";
 }
 
-// $game = array(0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","player"=>"X","turn"=>1,"score1"=>0,"score2"=>0);
 
 $game = $_GET;
 
@@ -84,8 +83,28 @@ function turnchanger($playerchangedmoveset) {
 $playerturnchangedmoveset = (turnchanger($playerchangedmoveset));
 
 
-print_r($game);
+// print_r($game);
 
+
+function winnercheck($GET, $xwin, $owin) {
+	$GET = $_GET;
+	$winner = "";
+	foreach ($xwin as $winningarray) {
+		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+			if ($winner === "") {
+				$winner = "Player 1 Wins";
+			}
+		}
+	}
+	foreach ($owin as $winningarray) {
+		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+			if ($winner === "") {
+				$winner = "Player 2 Wins";
+			}
+		}
+	}
+	return $winner;
+}
 
 
 ?>
