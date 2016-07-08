@@ -4,24 +4,24 @@
 
 	<div class="boxtitle">Tic Tac Toe</div>
 
-	<div class="switcher"><a href="?mode=single" class="switcher__single">One Player</a><a href="?mode=double" class= "switcher__double">Two Player</a></div>
+	<div class="switcher"><a href="?mode=single&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&player=X&turn=1&score1=0&score2=0" class="switcher__single">One Player</a><a href="?mode=double" class= "switcher__double">Two Player</a></div>
 
 	<div class= "row">
-		<a href= "?<?php if(($_GET[0]=='X')||($_GET[0]=='O')){}else{echo "X--------O200";}?>"><div class= "square"><?php echo $game[0]; ?></div></a>
-		<a href= "?<?php if(($_GET[1]=='X')||($_GET[1]=='O')){}else{echo "-X-------O200";}?>"><div class= "square"><?php echo $game[1]; ?></div></a>
-		<a href= "?<?php if(($_GET[2]=='X')||($_GET[2]=='O')){}else{echo "--X------O200";}?>"><div class= "square"><?php echo $game[2]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[0]);?>"><div class= "square"><?php echo $game[0]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[1]);?>"><div class= "square"><?php echo $game[1]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[2]);?>"><div class= "square"><?php echo $game[2]; ?></div></a>
 	</div>
 
 	<div class= "row">
-		<a href= "<?php if(($_GET[3]=='X')||($_GET[3]=='O')){}else{}?>"><div class= "square"><?php echo $game[3]; ?></div></a>
-		<a href= "<?php if(($_GET[4]=='X')||($_GET[4]=='O')){}else{}?>"><div class= "square"><?php echo $game[4]; ?></div></a>
-		<a href= "<?php if(($_GET[5]=='X')||($_GET[5]=='O')){}else{}?>"><div class= "square"><?php echo $game[5]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[3]);?>"><div class= "square"><?php echo $game[3]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[4]);?>"><div class= "square"><?php echo $game[4]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[5]);?>"><div class= "square"><?php echo $game[5]; ?></div></a>
 	</div>
 
 	<div class= "row">
-		<a href= "<?php if(($_GET[6]=='X')||($_GET[6]=='O')){}else{}?>"><div class= "square"><?php echo $game[6]; ?></div></a>
-		<a href= "<?php if(($_GET[7]=='X')||($_GET[7]=='O')){}else{}?>"><div class= "square"><?php echo $game[7]; ?></div></a>
-		<a href= "<?php if(($_GET[8]=='X')||($_GET[8]=='O')){}else{}?>"><div class= "square"><?php echo $game[8]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[6]);?>"><div class= "square"><?php echo $game[6]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[7]);?>"><div class= "square"><?php echo $game[7]; ?></div></a>
+		<a href= "?<?php echo http_build_query($playerturnchangedmoveset[8]);?>"><div class= "square"><?php echo $game[8]; ?></div></a>
 	</div>
 
 

@@ -34,7 +34,9 @@ else {
 	$game[player] = "X";
 }
 
-$game = array(0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","player"=>"X","turn"=>1,"score1"=>0,"score2"=>0);
+// $game = array(0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","player"=>"X","turn"=>1,"score1"=>0,"score2"=>0);
+
+$game = $_GET;
 
 
 function moveplacer ($game) {
@@ -68,6 +70,7 @@ function playerchanger($moveset) {
 $playerchangedmoveset = playerchanger($moveset);
 
 
+
 function turnchanger($playerchangedmoveset) {
 	$moveset3 = array();
 	foreach($playerchangedmoveset as $move) {
@@ -78,6 +81,10 @@ function turnchanger($playerchangedmoveset) {
 }
 
 
+$playerturnchangedmoveset = (turnchanger($playerchangedmoveset));
+
+
+print_r($game);
 
 
 
