@@ -84,18 +84,17 @@ $playerturnchangedmoveset = (turnchanger($playerchangedmoveset));
 // print_r($game);
 
 
-function winnercheck($GET, $xwin, $owin) {
-	$GET = $_GET;
+function winnercheck($game, $xwin, $owin) {
 	$winner = "";
 	foreach ($xwin as $winningarray) {
-		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+		if (array_intersect_assoc($game, $winningarray) == $winningarray) {
 			if ($winner === "") {
 				$winner = "Player 1 Wins";
 			}
 		}
 	}
 	foreach ($owin as $winningarray) {
-		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+		if (array_intersect_assoc($game, $winningarray) == $winningarray) {
 			if ($winner === "") {
 				$winner = "Player 2 Wins";
 			}

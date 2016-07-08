@@ -99,20 +99,19 @@ $owin = array(
 
 /* --- Compares current board arrangement to each winning arrangement-- */
 
-function winnercheck($GET, $xwin, $owin) {
-	$GET = $_GET;
+function winnercheck($game, $xwin, $owin) {
 	$winner = "";
 	foreach ($xwin as $winningarray) {
-		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+		if (array_intersect_assoc($game, $winningarray) == $winningarray) {
 			if ($winner === "") {
-				$winner = "Player 1 Wins";
+				$winner = "X";
 			}
 		}
 	}
 	foreach ($owin as $winningarray) {
-		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
+		if (array_intersect_assoc($game, $winningarray) == $winningarray) {
 			if ($winner === "") {
-				$winner = "Player 2 Wins";
+				$winner = "O";
 			}
 		}
 	}
@@ -122,6 +121,79 @@ function winnercheck($GET, $xwin, $owin) {
 
 
 /* ------------------------------------ Computer Logic -------------------------------------------- */
+
+
+/* ------------------- Winning/Losing Computer Moves -------------------- */
+
+function winningcomputermove($playerturnchangedmoveset,$xwin,$owin,$game){
+	foreach($playerturnchangedmoveset as $key => $move) {
+		if(winnercheck($move,$xwin,$owin) == $game["player"]){
+			return $move;
+		}
+	}
+}
+
+$winningcomputermove = winningcomputermove($playerturnchangedmoveset,$xwin,$owin,$game);
+
+
+function usermoveplacer ($game) {
+		$usermoves = array();
+		foreach ($game as $key => $value) {
+			$move = $game;
+			if (is_int($key)) {
+				$move[$key] = $move["user"];
+				array_push($usermoves,$move);
+			}
+		}
+		return $usermoves;
+	}
+$usermoveset = usermoveplacer ($game);
+
+function losingcomputerblock($usermoveset,$xwin,$owin,$game){
+	foreach($usermoveset as $key => $move) {
+		if(winnercheck($move,$xwin,$owin) == $game["user"]) {
+			return $key;
+		}
+	}
+}
+
+$losingcomputerblock = losingcomputerblock($usermoveset,$xwin,$owin,$game);
+
+/* -------------------------------------------------------------------------- */
+
+
+
+function computermove($winningcomputermove,$losingcomputerblock,$game,$playerturnchangedmoveset){
+	if($winningcomputermove != ""){
+		return $winningcomputermove;
+	}
+	elseif($losingcomputerblock != ""){
+		return $playerturnchangedmoveset[$losingcomputerblock];
+	}
+	elseif($game[4] == "-"){
+		return $playerturnchangedmoveset[4];
+	}
+	elseif($game[0]=="-"||$game[2]=="-"||$game[6]=="-"||$game[8]=="-"){
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
 

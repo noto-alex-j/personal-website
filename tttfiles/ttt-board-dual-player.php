@@ -37,7 +37,7 @@ else {
 }
 ?></div>
 
-<div class="winner"><?php echo winnercheck($_GET,$xwin,$owin); ?></div>
+<div class="winner"><?php if ($game["turn"]<10){echo winnercheck($game,$xwin,$owin);}else{echo "Draw";} ?></div>
 
 <div class= "resetbutton"><a href="Tic%20Tac%20Toe.php?mode=double&0=-&1=-&2=-&3=-&4=-&5=-&6=-&7=-&8=-&player=X&turn=1&score1=0&score2=0"">Reset</a></div>
 
