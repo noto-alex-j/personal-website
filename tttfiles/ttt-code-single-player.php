@@ -100,7 +100,7 @@ function computermoveplacer ($game) {
 	$moveset = array();
 	foreach ($game as $key => $value) {
 		$move = $game;
-		if (is_int($key)) {
+		if (is_int($key) && $value == "-") {
 			$move[$key] = $move["computer"];
 			array_push($moveset,$move);
 		}
@@ -190,10 +190,25 @@ $computermove = (computermove($winningcomputermove,$losingcomputerblock,$game,$c
 
 
 
+function arraymerger($computermove,$usermove,$game) {
+	foreach ($computermove as $key => $move) {
+		if ($computermove[$key] == "-" && $usermove[$key] == $game["user"]) {
+			$computermove[$key] = $usermove[$key];
+		}
+	}
+	return $computermove;
+}
 
 
+function linkgenerator($computermove,$usermoveset,$game){
+	$links = array();
+	foreach($usermoveset as $usermove) {
+		array_push($links, arraymerger($computermove,$usermove,$game));
+	}
+	return $links;
+}
 
-
+$linkslist = linkgenerator($computermove,$usermoveset,$game);
 
 
 
