@@ -1,58 +1,22 @@
 <?php
 
-$player1 = "X";
-$player2 = "O";
+$playerx = 1;
+$playero = 2;
 
-
-$currentboard = implode($_GET);
+$game = array(0=>"",1=>"",2=>"",3=>"",4=>"",5=>"",6=>"",7=>"",8=>"",player=>"",turn=>"",score1=>"",score2=>"");
 
 /* Decided that it's easier to just include the & in the first query */
 
-$links1 = array (
-	0=>"&0=X",1=>"&1=X",2=>"&2=X",3=>"&3=X",4=>"&4=X",5=>"&5=X",6=>"&6=X",7=>"&7=X",8=>"&8=X");
-
-$links2 = array (
-	0=>"&0=O",1=>"&1=O",2=>"&2=O",3=>"&3=O",4=>"&4=O",5=>"&5=O",6=>"&6=O",7=>"&7=O",8=>"&8=O");
 
 
 /* ------ Switches player turn based on last element in query param ------ */
 
-if (end($_GET) == "X") {
-	$links = $links2;
-}
-elseif (end($_GET) == "O") {
-	$links = $links1;
-}
-else {
-	$links = $links1;
-}
 
 
-/* --------- Determines winning board arrangement ----------- */
 
-$xwin = array(
-	array(0=>"X",1=>"X",2=>"X"),
-	array(3=>"X",4=>"X",5=>"X"),
-	array(6=>"X",7=>"X",8=>"X"),
-	array(0=>"X",3=>"X",6=>"X"),
-	array(1=>"X",4=>"X",7=>"X"),
-	array(2=>"X",5=>"X",8=>"X"),
-	array(0=>"X",4=>"X",8=>"X"),
-	array(2=>"X",4=>"X",6=>"X")
-);
 
-$owin = array(
-	array(0=>"O",1=>"O",2=>"O"),
-	array(0=>"O",1=>"O",2=>"O"),
-	array(6=>"O",7=>"O",8=>"O"),
-	array(0=>"O",3=>"O",6=>"O"),
-	array(1=>"O",4=>"O",7=>"O"),
-	array(2=>"O",5=>"O",8=>"O"),
-	array(0=>"O",4=>"O",8=>"O"),
-	array(2=>"O",4=>"O",6=>"O")
-);
 
-/* Checks for winning arrangement and if present returns Player __ Wins */
+/* Checks for winning X arrangement and if present returns Player 1 Wins */
 /* Still double reporting */
 
 function winnercheck($GET, $xwin, $owin) {
@@ -76,7 +40,50 @@ function winnercheck($GET, $xwin, $owin) {
 }
 
 
+/* ---------------------------------- Computer Player Logic ------------------------------------- */
 
+
+$currentboard = $_GET;
+
+	
+function computermovelinkendarrays($links,$GET,$xwin,$owin){
+	$GET = http_build_query($GET);
+	$allPossibleLinks = array();
+	foreach ($links as $key => $linkend) {
+		$concat = $GET . $linkend;
+		parse_str($concat, $possiblelink);
+		array_push($allPossibleLinks, $possiblelink);
+	}
+	return $allPossibleLinks;
+}
+
+function winningComputerMove($links,$GET,$xwin,$owin) {
+	$cpulinkends = computermovelinkendarrays($links,$GET,$xwin,$owin);
+	foreach($cpulinkends as $key => $end) {
+		if (winnercheck($end,$xwin,$owin) == "Player 1 Wins") {
+			return http_build_query($end);
+		}
+	}
+}
+
+function computermove ($links,$GET,$xwin,$owin) {
+	if (winningComputerMove($links,$GET,$xwin,$owin)){
+		return winningComputerMove($links,$GET,$xwin,$owin);
+	}
+	
+}
+
+$computerlinkend = computermove($links2,$_GET,$xwin,$owin);
+
+?>
+
+
+
+
+
+
+
+<?php /*
 
 
 /* -------------------------------- Unused Code --------------------------------------- 
@@ -181,5 +188,49 @@ function owinnercheck($GET, $owin) {
 }
 
 
-*/
+
+
+
+<a href= "  "><div class= "square"><?php echo $_GET[0]; ?></div></a>
+
+<?php 
+
+if(($_GET[0]=='X')||($_GET[0]=='O')){
+} 
+
+else { 
+	echo "?".$_SERVER['QUERY_STRING']; 
+	echo $links[0]; 
+	echo $computerlinkend;
+}
+
 ?>
+
+
+
+? &0=X&4=O &0=X &4=X
+
+
+
+
+
+
+
+
+function cornerComputerMove ($links,$GET,$xwin,$owin) {
+	$cpulinkends = computermovelinkendarrays($links,$GET,$xwin,$owin);
+	foreach($cpulinkends as $key => $end) {
+		if ($key == 0 || $key == 2 || $key == 6 || $key == 8) {
+			if (!array_key_exists($key, $GET)) {
+				print http_build_query($end) . "\n";
+			}
+		}
+	}
+}
+
+
+
+
+
+
+*/ ?>

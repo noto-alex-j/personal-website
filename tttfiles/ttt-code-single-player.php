@@ -1,31 +1,5 @@
 <?php
 
-$player1 = "X";
-$player2 = "O";
-
-
-/* Decided that it's easier to just include the & in the first query */
-
-$links1 = array (
-	0=>"&0=X",1=>"&1=X",2=>"&2=X",3=>"&3=X",4=>"&4=X",5=>"&5=X",6=>"&6=X",7=>"&7=X",8=>"&8=X");
-
-$links2 = array (
-	0=>"&0=O",1=>"&1=O",2=>"&2=O",3=>"&3=O",4=>"&4=O",5=>"&5=O",6=>"&6=O",7=>"&7=O",8=>"&8=O");
-
-
-/* ------ Switches player turn based on last element in query param ------ */
-
-if (end($_GET) == "X") {
-	$links = $links2;
-}
-elseif (end($_GET) == "O") {
-	$links = $links1;
-}
-else {
-	$links = $links1;
-}
-
-
 /* --------- Determines winning board arrangement ----------- */
 
 $xwin = array(
@@ -50,78 +24,63 @@ $owin = array(
 	array(2=>"O",4=>"O",6=>"O")
 );
 
-/* Checks for winning X arrangement and if present returns Player 1 Wins */
-/* Still double reporting */
+$player1 = "X";
+$player2 = "O";
 
-function winnercheck($GET, $xwin, $owin) {
-	$GET = $_GET;
-	$winner = "";
-	foreach ($xwin as $winningarray) {
-		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
-			if ($winner === "") {
-				$winner = "Player 1 Wins";
-			}
+if ($game[turn] % 2 == 0) {
+	$game[player] = "O";
+}
+else {
+	$game[player] = "X";
+}
+
+$game = array(0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","player"=>"X","turn"=>1,"score1"=>0,"score2"=>0);
+
+
+function moveplacer ($game) {
+	$moveset = array();
+	foreach ($game as $key => $value) {
+		$move = $game;
+		if (is_int($key)) {
+			$move[$key] = $move["player"];
+			array_push($moveset,$move);
 		}
 	}
-	foreach ($owin as $winningarray) {
-		if (array_intersect_assoc($GET, $winningarray) == $winningarray) {
-			if ($winner === "") {
-				$winner = "Player 2 Wins";
-			}
+	return $moveset;
+}
+
+$moveset = moveplacer($game);
+
+function playerchanger($moveset) {
+	$moveset2 = array();
+	foreach($moveset as $move) {
+		if($move["player"] == "X") {
+			$move["player"] = "O";
+		} 
+		elseif($move["player"] == "O") {
+			$move["player"] = "X";
 		}
+		array_push($moveset2,$move);
 	}
-	return $winner;
+	return $moveset2;
 }
 
+$playerchangedmoveset = playerchanger($moveset);
 
-/* ---------------------------------- Computer Player Logic ------------------------------------- */
 
-
-$currentboard = $_GET;
-
-	
-function computermovelinkendarrays($links,$GET,$xwin,$owin){
-	$GET = http_build_query($GET);
-	$allPossibleLinks = array();
-	foreach ($links as $key => $linkend) {
-		$concat = $GET . $linkend;
-		parse_str($concat, $possiblelink);
-		array_push($allPossibleLinks, $possiblelink);
+function turnchanger($playerchangedmoveset) {
+	$moveset3 = array();
+	foreach($playerchangedmoveset as $move) {
+		$move["turn"] += 1;
+		array_push($moveset3,$move);
 	}
-	return $allPossibleLinks;
-}
-
-$cpulinkends = computermovelinkendarrays($links,$GET,$xwin,$owin);
-
-
-function determineWinningComputerMove($cpulinkends,$xwin,$owin) {
-	foreach($cpulinkends as $key => $end) {
-		if (winnercheck($end,$xwin,$owin) == "Player 1 Wins") {
-			return http_build_query($end);
-		}
-		
-	}
-}
-
-function computermove ($cpulinksends,$xwin,$owin) {
-	if (determineWinningComputerMove($cpulinkends,$xwin,$owin)){
-		
-	}
+	return $moveset3;
 }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+?>
 
 
