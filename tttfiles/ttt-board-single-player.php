@@ -26,7 +26,17 @@
 
 <div class= "userpiece">User is <?php echo $game["user"];?></div>
 
-<div class="winner"><?php if ($game["turn"]<5){echo winnercheck($computermove,$xwin,$owin);}else{echo "Draw";} ?></div>
+<div class="winner">
+<?php 
+if ($game["turn"]<5){
+	if(winnercheck($computermove,$xwin,$owin)!=""){
+		echo "The winner is " . winnercheck($computermove,$xwin,$owin) . "!";
+	}
+}
+else{
+	echo "Draw";
+} ?>
+</div>
 
 <div class= "resetbutton"><a href="?<?php echo $start;?>">Start</a></div>
 

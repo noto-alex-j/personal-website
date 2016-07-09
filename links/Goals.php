@@ -4,13 +4,13 @@
 
 <?php include("../header.php"); ?>
 
-<body id= "bodylayoutcontainer">
+<body class= "body">
 
-	<div id= "pagecontainer">
+<div class= "supercontainer">
 
-		<div id="topbox"></div>
+	<?php include("../navigation/navigation.php"); ?>
 
-		<div id= "pagecontents">
+	<div class= "pagecontents">
 
 			<h3>Personal Goals</h3>
 			<ul>
@@ -34,11 +34,9 @@
 				<li>Enjoy my job!</li>
 			</ul>
 
-		</div>
-
 	</div>
 
-<?php include("../navigation/navigation.php"); ?>
+</div>
 
 </body>
 

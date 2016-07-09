@@ -1,38 +1,21 @@
-html {
-	height: 100%;
-	width: 100%
-}
-
-#bodylayoutcontainer {
-	display: flex;
-	flex-flow: row nowrap;
-	height: 100%;
-	width: auto;
-}
-
 /*----------------------------------------- Page Content Settings ------------------------------------------ */
 
-#pagecontainer {
-	order: 1;
+.body {
+	min-height: 100vh;
 	display: flex;
-	flex-flow: column nowrap;
-	flex: auto;
-	flex-basis: 50px;
+	flex-direction: row;
+}
+
+.supercontainer {
+	display: flex;
+	flex: 1;
 	background-color: #EAEAEA;
 	font-family: "Helvetica";
 	font-weight: lighter;
-	border-right: 50px solid turquoise;
 }
 
-#topbox {
-	height: 65px;
-	width: 100%;
-	background-color: orange;
-}
-
-#pagecontents {
-	padding: 0px 5px 0px 20px;
-
+.pagecontents {
+	flex: 1;
 }
 
 
@@ -40,18 +23,16 @@ html {
 
 /*--------------------------Navigation Bar Overall Container-------------------------------*/
 
-#navigationcontainer {
-	order: 0;
+.navigationcontainer {
 	display: flex;
 	flex-flow: column nowrap;
-	flex: 0 1 auto;
-	height: 100%;
+	flex: 0 0 200px;
 	background-color: white;
 	padding-right: 5px;
 	border: 1px solid black;
 }
 
-#logo {
+.logo {
 	color: black;
 	text-align: center;
 	margin-bottom: 50px;
@@ -114,7 +95,7 @@ html {
 	border-right: 3px inset grey;
 }
 
-#currentpage {
+.currentpage {
 	font-weight: bold;
 }
 

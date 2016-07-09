@@ -6,13 +6,13 @@
 
 <link type= "text/css"; rel= "stylesheet"; href= "../tttfiles/ttt.css">
 
-<body id= "bodylayoutcontainer">
+<body class= "body">
 
-	<div id= "pagecontainer">
+<div class= "supercontainer">
 
-		<div id="topbox"></div>
+	<?php include("../navigation/navigation.php"); ?>
 
-		<div id= "pagecontents">
+	<div class= "pagecontents">
 			
 			<?php 
 			if ($_GET["mode"] == "single") { include "../tttfiles/ttt-board-single-player.php"; }
@@ -21,11 +21,9 @@
 			?>
 
 
-		</div>
-
 	</div>
 
-<?php include "../navigation/navigation.php"; ?>
+</div>
 
 </body>
 

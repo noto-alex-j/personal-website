@@ -4,13 +4,13 @@
 
 <?php include("../header.php"); ?>
 
-<body id= "bodylayoutcontainer">
+<body class= "body">
 
-	<div id= "pagecontainer">
+<div class= "supercontainer">
 
-		<div id="topbox"></div>
+	<?php include("../navigation/navigation.php"); ?>
 
-		<div id= "pagecontents">
+	<div class= "pagecontents">
 
 			<h3>Microsoft gaining an Edge in the browser market?</h3>
 			<p>
@@ -23,12 +23,9 @@
 				But is it too late? Has Microsoft already lost the browser race? There are several good browsers out there that have been performing better than Microsoft’s offerings and have been doing so for a very long time. In fact, Microsoft seems to have a habit of releasing poorly performing software and then scrambling to improve it when consumers report negative experiences and begin moving to other options. This was my experience, and the experience of others, with Windows 10 as a whole. It seemed like it was released perhaps a year too early, and it lacked support for much my laptop’s hardware. I’ve since moved to another option. But one of the most interesting and exciting aspects of the world of software is that it is always evolving. Perhaps Microsoft will debut a browser that will finally steal some of Chrome’s and Firefox’s thunder. There are more and more complaints of those browsers becoming bloated and clunky as well. The beauty of the free market is that competition encourages them all to continue improving. 
 			</p>
 
-		</div>
-
 	</div>
 
-<?php include("../navigation/navigation.php"); ?>
-
+</div>
 
 </body>
 

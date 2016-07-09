@@ -6,13 +6,13 @@
 
 <link type= "text/css"; rel= "stylesheet"; href= "../rpsfiles/rps.css">
 
-<body id= "bodylayoutcontainer">
+<body class= "body">
 
-	<div id= "pagecontainer">
+<div class= "supercontainer">
 
-		<div id="topbox"></div>
+	<?php include("../navigation/navigation.php"); ?>
 
-		<div id= "pagecontents">
+	<div class= "pagecontents">
 
 			<h1>Rock Paper Scissors</h1>
 			<br>
@@ -29,11 +29,9 @@
 			<a href= "Rock%20Paper%20Scissors.php" id= "replaybutton">Replay</a>
 
 
-		</div>
-
 	</div>
 
-<?php include("../navigation/navigation.php"); ?>
+</div>
 
 </body>
 

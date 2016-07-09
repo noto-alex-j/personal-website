@@ -4,13 +4,13 @@
 
 <?php include("../header.php"); ?>
 
-<body id= "bodylayoutcontainer">
+<body class= "body">
 
-	<div id= "pagecontainer">
+<div class= "supercontainer">
 
-		<div id="topbox"></div>
+	<?php include("../navigation/navigation.php"); ?>
 
-		<div id= "pagecontents">
+	<div class= "pagecontents">
 
 			<h3>Mechanical Mind</h3>
 
@@ -29,11 +29,9 @@
 			<br>
 			<a href= "http://www.elephantracing.com/index.htm"><img src= "http://www.elephantracing.com/images/logo_061813.png" /></a>
 
-		</div>
-
 	</div>
 
-<?php include("../navigation/navigation.php"); ?>
+</div>
 
 </body>
 

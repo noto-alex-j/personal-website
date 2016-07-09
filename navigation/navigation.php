@@ -13,9 +13,9 @@ $gameslist = scandir($gameslinks);
 
 <!-- ----------------------------------------Navigation Container-------------------------------------------- -->
 
-<div id= "navigationcontainer">
+<div class= "navigationcontainer">
 
-	<div id= "logo">Alex Noto</div>
+	<div class= "logo">Alex Noto</div>
 
 <!-- ------------------------------------------------------------- -->
 
@@ -35,7 +35,7 @@ $gameslist = scandir($gameslinks);
 
 		<div class= "dropdowncontent">
 		<?php for ($file = 3; $file < count($linkslist); $file++) { ?>
-		<a href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"<?php if (rtrim($linkslist[$file], ".php") == $title) { echo ' id= "currentpage"'; } ?>><?php echo rtrim($linkslist[$file], ".php"); ?></a> 
+		<a href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"<?php if (rtrim($linkslist[$file], ".php") == $title) { echo ' class= "currentpage"'; } ?>><?php echo rtrim($linkslist[$file], ".php"); ?></a> 
 		<?php } ?>
 		</div>
 
@@ -49,7 +49,7 @@ $gameslist = scandir($gameslinks);
 
 		<div class= "dropdowncontent">
 		<?php for ($file = 3; $file < count($articlelist); $file++) { ?>
-		<a href= "<?php if ($prefix == ""){echo "articles/";} else {echo "../articles/";}?><?php echo ltrim($articlelist[$file], "//articles/"); ?>"<?php if (rtrim($articlelist[$file], ".php") == $title) { echo ' id= "currentpage"'; } ?>><?php echo rtrim($articlelist[$file], ".php"); ?></a>
+		<a href= "<?php if ($prefix == ""){echo "articles/";} else {echo "../articles/";}?><?php echo ltrim($articlelist[$file], "//articles/"); ?>"<?php if (rtrim($articlelist[$file], ".php") == $title) { echo ' class= "currentpage"'; } ?>><?php echo rtrim($articlelist[$file], ".php"); ?></a>
 		<?php } ?>
 		</div>
 
@@ -63,7 +63,7 @@ $gameslist = scandir($gameslinks);
 
 		<div class= "dropdowncontent">
 		<?php for ($file = 3; $file < count($gameslist); $file++) { ?>
-		<a href= "<?php if ($prefix == ""){echo "games/";} else {echo "../games/";}?><?php echo ltrim($gameslist[$file], "//games/"); ?>"<?php if (rtrim($gameslist[$file], ".php") == $title) { echo ' id= "currentpage"'; } ?>><?php echo rtrim($gameslist[$file], ".php"); ?></a>
+		<a href= "<?php if ($prefix == ""){echo "games/";} else {echo "../games/";}?><?php echo ltrim($gameslist[$file], "//games/"); ?>"<?php if (rtrim($gameslist[$file], ".php") == $title) { echo ' class= "currentpage"'; } ?>><?php echo rtrim($gameslist[$file], ".php"); ?></a>
 		<?php } ?>
 		</div>
 

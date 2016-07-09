@@ -88,12 +88,12 @@ $owin = array(
 function winnercheck($game, $xwin, $owin) {
 	foreach ($xwin as $winningarray) {
 		if (array_intersect_assoc($game, $winningarray) == $winningarray) {
-				return "X";
+			return "X";
 		}
 	}
 	foreach ($owin as $winningarray) {
 		if (array_intersect_assoc($game, $winningarray) == $winningarray) {
-				return "O";
+			return "O";
 		}
 	}
 }
