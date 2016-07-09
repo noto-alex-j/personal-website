@@ -2,8 +2,8 @@
 
 $game = $_GET;
 
-
-
+$startarray = array("mode"=>"single",0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","computer"=>"","user"=>"","turn"=>1,"score1"=>0,"score2"=>0);
+$start = http_build_query($startarray);
 
 
 // Array ( [mode] => single [0] => - [1] => - [2] => - [3] => - [4] => - [5] => - [6] => - [7] => - [8] => - [computer] => X [user] => O [turn] => 1 [score1] => 0 [score2] => 0 )
@@ -73,22 +73,16 @@ $owin = array(
 /* --- Compares current board arrangement to each winning arrangement-- */
 
 function winnercheck($game, $xwin, $owin) {
-	$winner = "";
 	foreach ($xwin as $winningarray) {
 		if (array_intersect_assoc($game, $winningarray) == $winningarray) {
-			if ($winner === "") {
-				$winner = "X";
-			}
+				return "X";
 		}
 	}
 	foreach ($owin as $winningarray) {
 		if (array_intersect_assoc($game, $winningarray) == $winningarray) {
-			if ($winner === "") {
-				$winner = "O";
-			}
+				return "O";
 		}
 	}
-	return $winner;
 }
 
 
@@ -102,6 +96,9 @@ function computermoveplacer ($game) {
 		$move = $game;
 		if (is_int($key) && $value == "-") {
 			$move[$key] = $move["computer"];
+			array_push($moveset,$move);
+		}
+		elseif (is_int($key)){
 			array_push($moveset,$move);
 		}
 	}
@@ -209,8 +206,6 @@ function linkgenerator($computermove,$usermoveset,$game){
 }
 
 $linkslist = linkgenerator($computermove,$usermoveset,$game);
-
-
 
 
 
