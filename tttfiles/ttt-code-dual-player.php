@@ -1,5 +1,10 @@
 <?php
 
+$startarray = array("mode"=>"double",0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","turn"=>1,"score1"=>0,"score2"=>0);
+
+
+$start = http_build_query($startarray);
+
 /* --------- Determines winning board arrangement ----------- */
 
 $xwin = array(
