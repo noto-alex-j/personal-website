@@ -24,17 +24,7 @@
 		<a href= "<?php if($computermove[8] == "-") {echo "?" . http_build_query($linkslist[8]);}?>"><div class= "square"><?php echo $computermove[8]; ?></div></a>
 	</div>
 
-<div class= "playerturn"><?php
-if ($game["player"] == "X") {
-	echo "Player 1's Turn";
-}
-elseif ($game["player"] == "O") {
-	echo "Player 2's Turn";
-}
-else {
-	echo "Player 1's Turn";
-}
-?></div>
+<div class= "userpiece">User is <?php echo $game["user"];?></div>
 
 <div class="winner"><?php if ($game["turn"]<5){echo winnercheck($computermove,$xwin,$owin);}else{echo "Draw";} ?></div>
 

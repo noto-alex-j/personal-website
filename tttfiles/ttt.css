@@ -76,6 +76,12 @@
 	color: black;
 }
 
+.userpiece {
+	display: flex;
+	margin-top: 25px;
+	color: black;
+}
+
 .winner {
 	display: flex;
 	margin-top: 10px;

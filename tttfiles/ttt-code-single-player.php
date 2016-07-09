@@ -4,8 +4,15 @@ $game = $_GET;
 
 $startarray = array("mode"=>"single",0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","computer"=>"","user"=>"","turn"=>1,"score1"=>0,"score2"=>0);
 
-$startarray["computer"] = "X";
-$startarray["user"] = "O";
+$coinflipper = mt_rand(1,2);
+if ($coinflipper == 1){
+	$startarray["computer"] = "X";
+	$startarray["user"] = "O";
+}
+else{
+	$startarray["computer"] = "O";
+	$startarray["user"] = "X";
+}
 
 $start = http_build_query($startarray);
 
