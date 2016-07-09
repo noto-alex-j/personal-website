@@ -3,8 +3,11 @@
 $game = $_GET;
 
 $startarray = array("mode"=>"single",0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","computer"=>"","user"=>"","turn"=>1,"score1"=>0,"score2"=>0);
-$start = http_build_query($startarray);
 
+$startarray["computer"] = "X";
+$startarray["user"] = "O";
+
+$start = http_build_query($startarray);
 
 // Array ( [mode] => single [0] => - [1] => - [2] => - [3] => - [4] => - [5] => - [6] => - [7] => - [8] => - [computer] => X [user] => O [turn] => 1 [score1] => 0 [score2] => 0 )
 
@@ -18,8 +21,11 @@ function usermoveplacer ($game) {
 	$moveset = array();
 	foreach ($game as $key => $value) {
 		$move = $game;
-		if (is_int($key)) {
+		if (is_int($key) && $value == "-") {
 			$move[$key] = $move["user"];
+			array_push($moveset,$move);
+		}
+		elseif (is_int($key)){
 			array_push($moveset,$move);
 		}
 	}
@@ -94,12 +100,17 @@ function computermoveplacer ($game) {
 	$moveset = array();
 	foreach ($game as $key => $value) {
 		$move = $game;
-		if (is_int($key) && $value == "-") {
-			$move[$key] = $move["computer"];
-			array_push($moveset,$move);
+		if ($game["computer"]=="O" && $game["turn"]==1){
+			array_push($moveset,$game);
 		}
-		elseif (is_int($key)){
-			array_push($moveset,$move);
+		else{
+			if (is_int($key) && $value == "-") {
+				$move[$key] = $move["computer"];
+				array_push($moveset,$move);
+			}
+			elseif (is_int($key)){
+				array_push($moveset,$move);
+			}
 		}
 	}
 	return $moveset;
