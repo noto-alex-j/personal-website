@@ -23,7 +23,7 @@ $gameslist = scandir($gameslinks);
 
 	<div class= "dropdown">
 
-		<div class= "dropdownbutton"><h3><a href= "<?php if ($prefix == ""){echo "index.php";} else {echo "../index.php";} ?>">Home</a></h3></div>
+		<div class= "button"><h3><a class= "button__home" href= "<?php if ($prefix == ""){echo "index.php";} else {echo "../index.php";} ?>">Home</a></h3></div>
 
 	</div>
 
@@ -31,11 +31,11 @@ $gameslist = scandir($gameslinks);
 
 	<div class= "dropdown">
 
-		<div class= "dropdownbutton"><h3>Links</h3></div>
+		<div class= "button"><h3>Links</h3></div>
 
-		<div class= "dropdowncontent">
+		<div class= "content">
 		<?php for ($file = 3; $file < count($linkslist); $file++) { ?>
-		<a href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"<?php if (rtrim($linkslist[$file], ".php") == $title) { echo ' class= "currentpage"'; } ?>><?php echo rtrim($linkslist[$file], ".php"); ?></a> 
+		<a class= "content__link <?php if (rtrim($linkslist[$file], ".php") == $title) { echo "currentpage"; } ?>" href= "<?php if ($prefix == ""){echo "links/";} else {echo "../links/";}?><?php echo ltrim($linkslist[$file], "//links/"); ?>"><?php echo rtrim($linkslist[$file], ".php"); ?></a>
 		<?php } ?>
 		</div>
 
@@ -45,11 +45,11 @@ $gameslist = scandir($gameslinks);
 
 	<div class= "dropdown">
 
-		<div class= "dropdownbutton"><h3>Articles</h3></div>
+		<div class= "button"><h3>Articles</h3></div>
 
-		<div class= "dropdowncontent">
+		<div class= "content">
 		<?php for ($file = 3; $file < count($articlelist); $file++) { ?>
-		<a href= "<?php if ($prefix == ""){echo "articles/";} else {echo "../articles/";}?><?php echo ltrim($articlelist[$file], "//articles/"); ?>"<?php if (rtrim($articlelist[$file], ".php") == $title) { echo ' class= "currentpage"'; } ?>><?php echo rtrim($articlelist[$file], ".php"); ?></a>
+		<a class= "content__link <?php if (rtrim($articlelist[$file], ".php") == $title) { echo "currentpage"; } ?>" href= "<?php if ($prefix == ""){echo "articles/";} else {echo "../articles/";}?><?php echo ltrim($articlelist[$file], "//articles/"); ?>"><?php echo rtrim($articlelist[$file], ".php"); ?></a>
 		<?php } ?>
 		</div>
 
@@ -59,11 +59,11 @@ $gameslist = scandir($gameslinks);
 
 	<div class= "dropdown">
 
-		<div class= "dropdownbutton"><h3>Games</h3></div>
+		<div class= "button"><h3>Games</h3></div>
 
-		<div class= "dropdowncontent">
+		<div class= "content">
 		<?php for ($file = 3; $file < count($gameslist); $file++) { ?>
-		<a href= "<?php if ($prefix == ""){echo "games/";} else {echo "../games/";}?><?php echo ltrim($gameslist[$file], "//games/"); ?>"<?php if (rtrim($gameslist[$file], ".php") == $title) { echo ' class= "currentpage"'; } ?>><?php echo rtrim($gameslist[$file], ".php"); ?></a>
+		<a class= "content__link <?php if (rtrim($gameslist[$file], ".php") == $title) { echo "currentpage"; } ?>" href= "<?php if ($prefix == ""){echo "games/";} else {echo "../games/";}?><?php echo ltrim($gameslist[$file], "//games/"); ?>"><?php echo rtrim($gameslist[$file], ".php"); ?></a>
 		<?php } ?>
 		</div>
 
@@ -73,11 +73,11 @@ $gameslist = scandir($gameslinks);
 
 	<div class= "dropdown">
 
-		<div class= "dropdownbutton"><h3>Social Media</h3></div>
+		<div class= "button"><h3>Social Media</h3></div>
 
-		<div class= "dropdowncontent">
-			<a href="https://www.facebook.com/alex.noto">Facebook</a>
-			<a href="https://github.com/noto-alex-j">Github</a>
+		<div class= "content">
+			<a class= "content__link" href="https://www.facebook.com/alex.noto">Facebook</a>
+			<a class= "content__link" href="https://github.com/noto-alex-j">Github</a>
 		</div>
 
 	</div>
@@ -86,12 +86,12 @@ $gameslist = scandir($gameslinks);
 
 	<div class= "dropdown">
 
-			<div class= "dropdownbutton"><h3>Theme Switcher</h3></div>
+		<div class= "button"><h3>Theme Switcher</h3></div>
 
-			<div class= "dropdowncontent">
-				<a href="?theme=light">Light</a>
-				<a href="?theme=dark">Dark</a>
-			</div>
+		<div class= "content">
+			<a class= "content__link" href="?theme=light">Light</a>
+			<a class= "content__link" href="?theme=dark">Dark</a>
+		</div>	
 
 	</div>
 

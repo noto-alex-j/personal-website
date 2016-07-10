@@ -26,8 +26,6 @@
 /*--------------------------Navigation Bar Overall Container-------------------------------*/
 
 .navigationcontainer {
-	display: flex;
-	flex-flow: column nowrap;
 	flex: 0 0 200px;
 	background-color: white;
 	padding-right: 5px;
@@ -48,30 +46,6 @@
 
 /* -------Dropdown Container Behavior-------*/
 
-.dropdown {
-	display: flex;
-	flex-flow: column nowrap;
-	position: relative;
-	font-family: "Century Gothic";
-}
-
-.dropdown:hover .dropdowncontent {
-	display: flex;
-	flex-flow: column nowrap;
-	width: auto;
-	height: 50px;
-	animation: dropdownslidedown .3s;
-	animation-fill-mode: forwards;
-}
-
-/* -----------Dropdown Content------------*/
-
-.dropdowncontent {
-	height: 0;
-	width: 0;
-	overflow: hidden;
-}
-
 @keyframes dropdownslidedown {
 	0% {
 		height: 0px;
@@ -79,54 +53,6 @@
 	100% {
 		height: 50px;
 	}
-}
-
-.dropdowncontent a {
-	text-decoration: none;
-	color: black;
-	background-color: white;
-	border-right: 3px outset grey;
-	border-radius: 5px;
-	text-align: center;
-	height: 50px;
-	width: auto;
-}
-
-.dropdowncontent a:hover {
-	color: #130D71;
-	border-right: 3px inset grey;
-}
-
-.currentpage {
-	font-weight: bold;
-}
-
-/* -----------Dropdown Buttons------------*/
-
-.dropdownbutton {
-	border-right: 3px outset grey;
-	border-radius: 5px;
-	width: 200px;
-	text-align: center;
-	color: black;
-	background-color: white;
-}
-
-.dropdownbutton a {
-	text-decoration: none;
-	color:black;
-}
-
-.dropdownbutton a:hover {
-	color: #130D71;
-}
-
-.dropdownbutton:hover {
-	color: #130D71;
-	cursor: pointer;
-	border-right: 3px inset grey;
-	border-radius: 10px;
-	animation: buttontransform .15s;
 }
 
 @keyframes buttontransform {
@@ -138,6 +64,77 @@
 		border-radius: 10px;
 	}
 }
+
+.dropdown {
+	display: flex;
+	flex-flow: column nowrap;
+	position: relative;
+	font-family: "Century Gothic";
+}
+
+.dropdown:hover .content {
+	display: flex;
+	flex-flow: column nowrap;
+	width: auto;
+	height: 50px;
+	animation: dropdownslidedown .3s;
+	animation-fill-mode: forwards;
+}
+
+/* -----------Dropdown Buttons------------*/
+
+.button {
+	width: 200px;
+	border-right: 3px outset grey;
+	border-radius: 5px;
+	text-align: center;
+	color: black;
+	background-color: white;
+}
+
+.button:hover {
+	color: #130D71;
+	cursor: pointer;
+	border-right: 3px inset grey;
+	border-radius: 10px;
+	animation: buttontransform .15s;
+}
+
+.button__home {
+	text-decoration: none;
+	color:black;
+}
+
+
+/* -----------Dropdown Content------------*/
+
+.content {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+
+.content__link {
+	text-decoration: none;
+	color: black;
+	background-color: white;
+	border-right: 3px outset grey;
+	border-radius: 5px;
+	text-align: center;
+	height: 50px;
+	width: auto;
+}
+
+.content__link:hover {
+	color: #130D71;
+	border-right: 3px inset grey;
+}
+
+.currentpage {
+	font-weight: bold;
+}
+
+
 
 
 /*------------------------------------------ End of Navigation -------------------------------------------*/
