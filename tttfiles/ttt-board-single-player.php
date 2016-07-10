@@ -36,7 +36,9 @@
 	}
 	?>
 	</div>
-	
+
+<!-- 	<div class="score">X Score: <?php echo $computermove["xscore"];?> O Score: <?php echo $computermove["oscore"];?></div>
+ -->	
 	<div class= "resetbutton"><a href="?<?php echo $start;?>">Start</a></div>
 
 </div>

@@ -2,7 +2,7 @@
 
 $game = $_GET;
 
-$startarray = array("mode"=>"single",0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","computer"=>"","user"=>"","turn"=>1,"score1"=>0,"score2"=>0);
+$startarray = array("mode"=>"single",0=>"-",1=>"-",2=>"-",3=>"-",4=>"-",5=>"-",6=>"-",7=>"-",8=>"-","computer"=>"","user"=>"","turn"=>1,"xscore"=>0,"oscore"=>0);
 
 $coinflipper = mt_rand(1,2);
 if ($coinflipper == 1){
@@ -176,8 +176,12 @@ function randomchoice($game){
 				array_push($randomsquare, $key);
 			}
 		}
-	$randomkey = array_rand($randomsquare);
-	return $randomsquare[$randomkey];
+	if($randomsquare != ""){
+		return $randomsquare[array_rand($randomsquare)];
+	}
+	else{
+		return "";
+	}
 }
 
 $randomchoice = randomchoice($game);
@@ -186,17 +190,20 @@ $randomchoice = randomchoice($game);
 
 
 function computermove($winningcomputermove,$losingcomputerblock,$game,$computermoveset,$randomchoice){
-	if($winningcomputermove != ""){
+	if(is_int($winningcomputermove)){
 		return $winningcomputermove;
 	}
-	elseif($losingcomputerblock != ""){
+	elseif(is_int($losingcomputerblock)){
 		return $computermoveset[$losingcomputerblock];
 	}
 	elseif($game[4] == "-"){
 		return $computermoveset[4];
 	}
-	else{
+	elseif(is_int($randomchoice)){
 		return $computermoveset[$randomchoice];
+	}
+	else{
+		return $game;
 	}
 }
 
