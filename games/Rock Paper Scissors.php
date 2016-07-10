@@ -14,7 +14,9 @@
 
 	<div class= "pagecontents">
 
-			<h1>Rock Paper Scissors</h1>
+		<div class= "rpsboard">
+
+			<h1 class="maintitle">Rock Paper Scissors</h1>
 			<br>
 
 			<?php
@@ -26,8 +28,9 @@
 			}
 			?>
 			
-			<a href= "Rock%20Paper%20Scissors.php" id= "replaybutton">Replay</a>
+			<div class="replaybutton"><a href= "Rock%20Paper%20Scissors.php">Replay</a></div>
 
+		</div>
 
 	</div>
 

@@ -1,10 +1,10 @@
 <?php include ("rps-code.php"); ?>
 
-<div id= "results">
+<div class= "results">
 
 <!-- -------------Player Choice Container--------------- -->
 
-<div id= "playerchoice">
+<div class= "playerchoice">
 <h2>You chose:</h2>
 <br>
 <?php
@@ -28,7 +28,7 @@ else {
 
 <!-- -------------Computer Choice Container--------------- -->
 
-<div id= "computerchoice">
+<div class= "computerchoice">
 <h2>Computer chose:</h2>
 <br>
 <?php

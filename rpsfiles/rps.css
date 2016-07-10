@@ -1,79 +1,83 @@
-#pagecontents {
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
+.rpsboard {
+	width: 1050px;
+	padding-top: 20px;
+	margin:auto;
 }
 
-#results {
-	display: flex;
-	flex-flow: row nowrap;
-	height: 350px;
-	width: 1050px;
+.maintitle {
+	text-align: center;
+}
+
+.weapontitle {
+	text-align: center;
 }
 
 /* ---------------Replay Button Behavior------------------ */
 
-#replaybutton {
-	text-decoration: none;
-	border: 1px outset grey;
+.replaybutton {
+	width: 150px;
+	margin: auto;
+	margin-top: 50px;
+	border: 2px outset grey;
 	border-radius: 5px;
 	background: white;
-	height: 50px;
-	width: 150px;
 	font-weight: bolder;
 	font-size: 24px;
+	color: black;
 	text-align: center;
 	line-height: 50px;
-	margin-top: 30px;
 }
 
-#replaybutton:visited {
+.replaybutton a {
+	text-decoration: none;
 	color: black;
 }
 
-#replaybutton:hover {
+.replaybutton:visited {
+	color: black;
+}
+
+.replaybutton:hover {
 	border: 3px outset grey;
 	transition: border .1s ease-in-out;
 }
 
 /* ------------- RPS Weapon Choice Container ------------- */
 
-#rpsweapons {
+.rpsweapons {
 	display: flex;
 	flex-flow: row nowrap;
 	height: 350px;
-	width: 1050px;
 }
 
-#rpsweapons a {
+.rpsweapons a {
 	display: flex;
 }
 
 /* ------- Player and Computer Choice Containers -------- */
 
-#playerchoice {
+.results {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 350px;
+	margin-top: 85px;
+}
+
+.playerchoice {
 	display: flex;
 	flex-flow: column nowrap;
 }
 
-#playerchoice img {
-	display:flex;
-}
-
-#playerchoice h2 {
+.playerchoice h2 {
 	text-align: center;
 }
 
-#computerchoice {
+.computerchoice {
 	display: flex;
 	flex-flow: column nowrap;
 }
 
-#computerchoice img {
-	display: flex;
-}
-
-#computerchoice h2 {
+.computerchoice h2 {
 	text-align: center;
 }
 

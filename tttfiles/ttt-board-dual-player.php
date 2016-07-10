@@ -26,15 +26,18 @@
 
 
 	<div class= "playerturn"><?php
-	if ($game["player"] == "X") {
-		echo "Player 1's Turn";
-	}
-	elseif ($game["player"] == "O") {
-		echo "Player 2's Turn";
-	}
-	else {
-		echo "Player 1's Turn";
-	}
+		if ($game["turn"] >= 1){
+			if ($game["player"] == "X") {
+				echo "Player 1's Turn";
+			}
+			elseif ($game["player"] == "O") {
+				echo "Player 2's Turn";
+			}
+			else {
+				echo "Player 1's Turn";
+			}
+		}
+		else {echo "Click start to play with a friend";}
 	?></div>
 
 	<div class="winner"><?php if ($game["turn"]<10){echo winnercheck($game,$xwin,$owin);}else{echo "Draw";} ?></div>
