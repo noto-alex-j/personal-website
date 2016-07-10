@@ -25,21 +25,21 @@
 	</div>
 
 
-<div class= "playerturn"><?php
-if ($game["player"] == "X") {
-	echo "Player 1's Turn";
-}
-elseif ($game["player"] == "O") {
-	echo "Player 2's Turn";
-}
-else {
-	echo "Player 1's Turn";
-}
-?></div>
+	<div class= "playerturn"><?php
+	if ($game["player"] == "X") {
+		echo "Player 1's Turn";
+	}
+	elseif ($game["player"] == "O") {
+		echo "Player 2's Turn";
+	}
+	else {
+		echo "Player 1's Turn";
+	}
+	?></div>
 
-<div class="winner"><?php if ($game["turn"]<10){echo winnercheck($game,$xwin,$owin);}else{echo "Draw";} ?></div>
+	<div class="winner"><?php if ($game["turn"]<10){echo winnercheck($game,$xwin,$owin);}else{echo "Draw";} ?></div>
 
-<div class= "resetbutton"><a href="?<?php echo $start;?>">Start</a></div>
+	<div class= "resetbutton"><a href="?<?php echo $start;?>">Start</a></div>
 
 </div>
 

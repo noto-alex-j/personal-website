@@ -1,8 +1,11 @@
+/* -------------------------------- TTT Board --------------------------------------- */
+
 .tttbox {
 	display: flex;
 	flex-flow: column nowrap;
-	flex: 0 0 300px;
 	align-items: center;
+	width: 320px;
+	margin: auto;
 	margin-top: 50px;
 	border: 3px solid black;
 	border-radius: 10px;
@@ -11,7 +14,6 @@
 }
 
 .boxtitle {
-	display: flex;
 	height: 50px;
 	justify-content: center;
 	margin: 20px 0px 20px 0px;
@@ -20,9 +22,31 @@
 	color: black;
 }
 
-.switcher {
+.row {
 	display: flex;
-	justify-content: center;
+	flex-flow: row nowrap;
+}
+
+.row a {
+	text-decoration: none;
+	color: black;
+}
+
+.square {
+	height: 100px;
+	width: 100px;
+	border: 3px solid black;
+	border-radius: 10px;
+	font-size: 50px;
+	text-align: center;
+	line-height: 100px;
+}
+
+/* -------------------------------- Board Buttons / Info --------------------------------- */
+
+.switcher {
+	height: 30px;
+	line-height: 30px;
 	margin-bottom: 20px;
 	border: 2px solid black;
 	border-radius: 5px;
@@ -42,51 +66,26 @@
 	color: black;
 }
 
-.row {
-	display: flex;
-	flex-flow: row nowrap;
-}
-
-.row a {
-	text-decoration: none;
-	color: black;
-}
-
-.square {
-	display: flex;
-	height: 100px;
-	width: 100px;
-	border: 3px solid black;
-	border-radius: 10px;
-	font-size: 50px;
-	align-items: center;
-	justify-content: center;
-}
-
 .playerturn {
-	display: flex;
 	margin-top: 25px;
 	color: black;
 }
 
 .userpiece {
-	display: flex;
 	margin-top: 25px;
 	color: black;
 }
 
 .winner {
-	display: flex;
 	margin-top: 10px;
 	font-size: 40px;
 	color: black;
 }
 
 .resetbutton {
-	display: flex;
 	height: 30px;
 	width: 70px;
-	justify-content: center;
+	text-align: center;
 	line-height: 30px;
 	margin: 20px 0px 20px 0px;
 	border: 2px solid black;

@@ -24,21 +24,20 @@
 		<a href= "<?php if($computermove[8] == "-") {echo "?" . http_build_query($linkslist[8]);}?>"><div class= "square"><?php echo $computermove[8]; ?></div></a>
 	</div>
 
-<div class= "userpiece">User is <?php echo $game["user"];?></div>
-
-<div class="winner">
-<?php 
-if ($game["turn"]<5){
+	<div class= "userpiece">User is <?php echo $game["user"];?></div>
+	
+	<div class="winner">
+	<?php 
 	if(winnercheck($computermove,$xwin,$owin)!=""){
 		echo "The winner is " . winnercheck($computermove,$xwin,$owin) . "!";
 	}
-}
-else{
-	echo "Draw";
-} ?>
-</div>
-
-<div class= "resetbutton"><a href="?<?php echo $start;?>">Start</a></div>
+	elseif($computermove[0]!="-"&&$computermove[1]!="-"&&$computermove[2]!="-"&&$computermove[3]!="-"&&$computermove[4]!="-"&&$computermove[5]!="-"&&$computermove[6]!="-"&&$computermove[7]!="-"&&$computermove[8]!="-"){
+		echo "Draw";
+	}
+	?>
+	</div>
+	
+	<div class= "resetbutton"><a href="?<?php echo $start;?>">Start</a></div>
 
 </div>
 

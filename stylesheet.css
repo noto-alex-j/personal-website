@@ -1,5 +1,3 @@
-/*----------------------------------------- Page Content Settings ------------------------------------------ */
-
 .body {
 	min-height: 100vh;
 	display: flex;
@@ -14,10 +12,14 @@
 	font-weight: lighter;
 }
 
+/*----------------------------------------- Page Content Settings ------------------------------------------ */
+
 .pagecontents {
 	flex: 1;
+	border-top: 50px solid orange;
+	border-right: 50px solid turquoise;
+	padding: 0px 20px 0px 20px;
 }
-
 
 /*--------------------------------------- Navigation Bar Settings-------------------------------------------*/
 
