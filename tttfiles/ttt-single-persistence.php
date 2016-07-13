@@ -1,4 +1,4 @@
-<?php include "ttt-code-single-player.php"; ?>
+<?php include "ttt-single-persistence-code.php"; ?>
 
 <div class= "tttbox">
 
@@ -24,6 +24,8 @@
 		<a href= "<?php if($computermove[8] == "-") {echo "?" . http_build_query($linkslist[8]);}?>"><div class= "square"><?php echo $computermove[8]; ?></div></a>
 	</div>
 
+	<div class= "scorekeeper">X Score: <?php echo $displayscorex; ?> | O Score: <?php echo $displayscoreo; ?> | <a class= "scorereset" href= "http://localhost:8888/games/Tic%20Tac%20Toe.php?mode=single">Reset</a></div>
+
 	<div class= "userpiece"><?php if($game["turn"] >= 1){echo "You are " . $game["user"];}else{echo "Click start to play against the computer";}?></div>
 	
 	<div class="winner">
@@ -36,11 +38,9 @@
 	}
 	?>
 	</div>
-
+	
 	<div class= "resetbutton"><a href="?<?php echo $start;?>">Start</a></div>
 
 </div>
-
-
 
 

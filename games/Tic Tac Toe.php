@@ -15,9 +15,9 @@
 	<div class= "pagecontents">
 			
 			<?php 
-			if ($_GET["mode"] == "single") { include "../tttfiles/ttt-board-single-player.php"; }
-			elseif ($_GET["mode"] == "double") {include "../tttfiles/ttt-board-dual-player.php"; }
-			else {include "../tttfiles/ttt-board-single-player.php"; } 
+			if ($_GET["mode"] == "single") { include "../tttfiles/ttt-single-persistence.php"; }
+			elseif ($_GET["mode"] == "double") {include "../tttfiles/ttt-dual-persistence.php"; }
+			else {include "../tttfiles/ttt-single-persistence.php"; } 
 			?>
 
 
