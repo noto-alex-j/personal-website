@@ -12,10 +12,10 @@
 
 	<div class= "pagecontents">
 
-			<h3>Mechanical Mind</h3>
+			<h3>Auto Links</h3>
 
 			<p>
-				I'm a car guy. Always have been. It's an industry in which I'd like to work. But until then, here are some links to some of the leading companies I admire:
+				Companies in the auto industry that I admire:
 			</p>
 
 			<a href= "http://www.onassisporsches.com"><img src= "http://www.onassisporsches.com/.cm4all/iproc.php/distressed%20Onassis.png/resize_152_80/distressed%20Onassis.png" /></a>

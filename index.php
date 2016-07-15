@@ -13,13 +13,10 @@
 	<div class= "pagecontents">
 		<h3>About Me</h3>
 		<p>
-			I'm Alex. I'm a student at Omaha Code School. I like making things. I want to make the web.
-		</p>
+			I'm Alex, and I'm a student at Omaha Code School.
 	</div>
 
 </div>
-
-
 
 </body>
 
